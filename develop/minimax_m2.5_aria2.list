@@ -1,0 +1,414 @@
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/.gitattributes
+  dir=/data1/models/MiniMax-M2.5
+  out=.gitattributes
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/LICENSE-MODEL
+  dir=/data1/models/MiniMax-M2.5
+  out=LICENSE-MODEL
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/README.md
+  dir=/data1/models/MiniMax-M2.5
+  out=README.md
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/chat_template.jinja
+  dir=/data1/models/MiniMax-M2.5
+  out=chat_template.jinja
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/config.json
+  dir=/data1/models/MiniMax-M2.5
+  out=config.json
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/configuration_minimax_m2.py
+  dir=/data1/models/MiniMax-M2.5
+  out=configuration_minimax_m2.py
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/generation_config.json
+  dir=/data1/models/MiniMax-M2.5
+  out=generation_config.json
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/merges.txt
+  dir=/data1/models/MiniMax-M2.5
+  out=merges.txt
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00000-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00000-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00001-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00001-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00002-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00002-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00003-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00003-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00004-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00004-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00005-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00005-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00006-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00006-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00007-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00007-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00008-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00008-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00009-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00009-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00010-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00010-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00011-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00011-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00012-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00012-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00013-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00013-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00014-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00014-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00015-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00015-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00016-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00016-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00017-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00017-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00018-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00018-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00019-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00019-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00020-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00020-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00021-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00021-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00022-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00022-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00023-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00023-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00024-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00024-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00025-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00025-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00026-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00026-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00027-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00027-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00028-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00028-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00029-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00029-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00030-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00030-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00031-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00031-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00032-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00032-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00033-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00033-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00034-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00034-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00035-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00035-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00036-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00036-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00037-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00037-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00038-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00038-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00039-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00039-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00040-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00040-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00041-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00041-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00042-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00042-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00043-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00043-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00044-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00044-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00045-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00045-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00046-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00046-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00047-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00047-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00048-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00048-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00049-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00049-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00050-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00050-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00051-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00051-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00052-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00052-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00053-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00053-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00054-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00054-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00055-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00055-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00056-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00056-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00057-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00057-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00058-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00058-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00059-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00059-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00060-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00060-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00061-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00061-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00062-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00062-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00063-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00063-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00064-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00064-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00065-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00065-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00066-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00066-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00067-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00067-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00068-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00068-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00069-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00069-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00070-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00070-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00071-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00071-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00072-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00072-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00073-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00073-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00074-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00074-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00075-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00075-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00076-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00076-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00077-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00077-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00078-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00078-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00079-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00079-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00080-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00080-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00081-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00081-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00082-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00082-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00083-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00083-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00084-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00084-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00085-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00085-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00086-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00086-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00087-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00087-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00088-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00088-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00089-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00089-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00090-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00090-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00091-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00091-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00092-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00092-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00093-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00093-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00094-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00094-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00095-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00095-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00096-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00096-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00097-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00097-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00098-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00098-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00099-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00099-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00100-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00100-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00101-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00101-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00102-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00102-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00103-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00103-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00104-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00104-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00105-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00105-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00106-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00106-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00107-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00107-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00108-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00108-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00109-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00109-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00110-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00110-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00111-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00111-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00112-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00112-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00113-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00113-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00114-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00114-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00115-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00115-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00116-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00116-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00117-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00117-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00118-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00118-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00119-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00119-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00120-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00120-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00121-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00121-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00122-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00122-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00123-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00123-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model-00124-of-00126.safetensors
+  dir=/data1/models/MiniMax-M2.5
+  out=model-00124-of-00126.safetensors
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/model.safetensors.index.json
+  dir=/data1/models/MiniMax-M2.5
+  out=model.safetensors.index.json
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/modeling_minimax_m2.py
+  dir=/data1/models/MiniMax-M2.5
+  out=modeling_minimax_m2.py
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/tokenizer.json
+  dir=/data1/models/MiniMax-M2.5
+  out=tokenizer.json
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/tokenizer_config.json
+  dir=/data1/models/MiniMax-M2.5
+  out=tokenizer_config.json
+https://hf-mirror.com/MiniMaxAI/MiniMax-M2.5/resolve/main/vocab.json
+  dir=/data1/models/MiniMax-M2.5
+  out=vocab.json
