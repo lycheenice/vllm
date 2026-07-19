@@ -70,12 +70,54 @@ decode: 163 abort, 10 bootstrap 失败, 5.8M evicted, KVTransferError Aborted by
 代价: ttft 4×慢 (c8 p50 4.95s→19.6s), c32 仍有 prefill 排队 (bootstrap-req: 26)
 文档: results/glm_pd-nixl-cp8k/README.md
 
-## 待办
+## 当前运行状态快照 (2026-07-20 00:50)
+
+### 1. h200-2 sglang GLM PD 分离 (运行中)
+
+**栈**: P1.3 配置 (chunked=8192 + nocb router), 容器名 pd-prefill/pd-decode/pd-router
+- prefill: GPU0-3 TP4, port 8001, start-prefill-cp8k.sh
+- decode: GPU4-7 TP4, port 8002, start-decode-cp8k.sh
+- router: port 8000, start-router-nocb.sh (--disable-circuit-breaker)
+- 模型: GLM-5.2-W4AFP8 (/data1/GLM-5.2-W4AFP8 → /mnt/file/...)
+- 部署脚本: h200-2:/opt/sglang-glm-pd/ + develop/sglang/deploy/
+- c8/c16 已完成 (99.6%/99.8% 成功), c32 探针可能仍在跑 (pd-probe 容器)
+
+**环境**: ssh root@h200-2; sglang 镜像 br-harbor01.birentech.com/sucloud_test/h200-serving/lmsysorg/sglang:v0.5.15.post1-cu129; kvcache-benchmarks 在 /home/lychee/mycode/kvcache-benchmarks (h200-2 本地也有)
+
+**git**: fork=git@github.com:lycheenice/vllm.git, branch=v0.25.0, 最新 commit=34881cde3; push 用 `git push fork refs/heads/v0.25.0:refs/heads/v0.25.0`; develop 目录=/home/lychee/mycode/vllm/develop
+
+**P1.3 结果** (results/glm_pd-nixl-cp8k/):
+- c8: 263/264 success, cache 0.73, ttft p50 19.6s
+- c16: 489/490 success, cache 0.46, ttft p50 70.4s
+- c32: 进行中 (503=7, prefill bootstrap-req: 26 排队但未崩溃)
+
+**已知限制**: GLM MLA → hicache 不可用 (element_size=656); L1 pool 仅 441k tok/GPU; DeepGEMM JIT 10-20min 每次冷启
+
+### 2. h200-2 MiniMax-M2.5 PD 分离 (即将测试)
+
+**模型**: MiniMax-M2.5 (w8a8 FP8, MiniMaxM2ForCausalLM, 62层, 标准 GQA 非 MLA, 125 shards 230GB)
+- 已拷贝到 h200-2:/data1/models/MiniMax-M2.5/ (完整性验证通过: 96103 权重, 62 层全覆盖)
+- sglang 有 srt/models/minimax_m2.py 原生支持
+- **优势**: 标准 MHA → hicache 可用; 无 DeepGEMM JIT → 秒级启动; KV/token ~16KB → L1 pool ~5-6M tokens
+
+**实验设计**: develop/sglang/minimax_experiment_design.md
+**脚本**: develop/sglang/deploy/minimax/ (13 个脚本, 未 scp 到 h200-2)
+
+**4 组配置**:
+1. TP8 baseline (非 PD, 8 卡混合): start-baseline-tp8.sh, run_baseline_tp8.sh
+2. PD Config A (基础, chunked=32768, 默认熔断): start-prefill-A.sh + start-decode-A.sh
+3. PD Config B (P1.3 验证: chunked=8192 + nocb): start-prefill-B.sh + start-decode-B.sh
+4. PD Config C (B + hicache ratio=3): start-prefill-C.sh + start-decode-C.sh
+- PD 启停: run_pd.sh <A|B|C> [start|stop]
+- 发压: run_bench.sh <case> [levels] [trials], levels=1,4,16,32,64, trials=5, turns=all
+- 停止: stop_all.sh
+
+**发压**: kvcache-benchmarks codex_swebenchpro (610 traces, p50=30 turns), all turns, max_tokens=4096
+
+**执行顺序**: TP8 baseline → PD-A → PD-B → PD-C, 每组 1/4/16/32/64
+
+**待办 (GLM PD)**:
 - c32 完成后补充 P1.3 完整数据
-- P2.4: context-len 131072 (从 300000 降)
-- P2.2: optimistic-prefill-retries 2
-- P2.3: enable-prefill-delayer
-- 折中: chunked 16384 (8192 太慢, 32768 太独占)
-- Mooncake backend 对照 (P4.1)
-- TP4 不分离基线 (P4.2)
+- P2.4: context-len 131072; P2.2: optimistic-prefill-retries 2; P2.3: prefill-delayer
+- 折中: chunked 16384; Mooncake 对照; TP4 基线
 
