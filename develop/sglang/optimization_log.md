@@ -53,9 +53,29 @@ decode: 163 abort, 10 bootstrap 失败, 5.8M evicted, KVTransferError Aborted by
 结论: 过载后 PD 栈不可自恢复, 需重启
 根因: L1 仅 16GB/441k token (权重占 94.5GB), L2 hicache 关闭, chunked_prefill=32768 独占 batch, router 熔断误判 prefill
 
+## P1.1 L2 hicache — 失败 (2026-07-19)
+改动: --enable-hierarchical-cache --hicache-ratio N
+结果: ratio=10 OOM (4×271GB>NUMA); ratio=3+direct MLA element_size=656 不兼容 → detokenizer 挂起, 9/264 成功
+结论: sglang v0.5.15.post1 hicache kernel 不支持 MLA 压缩 KV layout, 代码级不兼容
+
+## P1.2 router 禁熔断 — 单独无效 (2026-07-19)
+改动: --disable-circuit-breaker --request-timeout-secs 600 --health-failure-threshold 10
+结果: c8 64/264 (24%), c16 0/490, c32 0/1168, router 503=11K
+结论: CB 关闭不够, health check 独立机制仍标记不健康, decode detokenizer 挂起是根因
+
+## P1.3 chunked_prefill 8192 + nocb — 有效! (2026-07-19)
+改动: --chunked-prefill-size 8192 (从 32768) + P1.2 nocb router
+结果: c8 263/264 (99.6%, cache 0.73), c16 489/490 (99.8%, cache 0.46), c32 进行中 (>2h, 503=7)
+核心机理: chunked 8192 消除 prefill batch 独占, health 响应快, router 不误判, 503 消除
+代价: ttft 4×慢 (c8 p50 4.95s→19.6s), c32 仍有 prefill 排队 (bootstrap-req: 26)
+文档: results/glm_pd-nixl-cp8k/README.md
+
 ## 待办
-- 优化方案已写入 04_optimization_analysis.md (Priorities P1.1-P4.2)
-- Phase A 待跑: P1.1 (开 hicache ratio=10) + P1.2 (禁熔断) + P1.3 (chunked 8192) → c8/c16/c32 验
+- c32 完成后补充 P1.3 完整数据
+- P2.4: context-len 131072 (从 300000 降)
+- P2.2: optimistic-prefill-retries 2
+- P2.3: enable-prefill-delayer
+- 折中: chunked 16384 (8192 太慢, 32768 太独占)
 - Mooncake backend 对照 (P4.1)
 - TP4 不分离基线 (P4.2)
 
