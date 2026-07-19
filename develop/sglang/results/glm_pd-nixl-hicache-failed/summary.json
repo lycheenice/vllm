@@ -1,0 +1,102 @@
+[
+  {
+    "total": 264,
+    "succeeded": 9,
+    "failed": 255,
+    "cache_hit_rate": 0.22034661591876462,
+    "cache_hit_populated": true,
+    "total_prompt_tokens": 137674,
+    "total_cached_tokens": 30336,
+    "total_completion_tokens": 8246,
+    "latency_ms": {
+      "p50": 38093.352724798024,
+      "p90": 66276.32414624095,
+      "p99": 78085.00659100711,
+      "mean": 37108.64285669393
+    },
+    "ttft_ms": {
+      "p50": 29883.50374624133,
+      "p90": 39599.950716644526,
+      "p99": 44716.36437781155,
+      "mean": 25602.45536495414
+    },
+    "tpot_ms": {
+      "mean": 9.8,
+      "p50": 9.26,
+      "p90": 15.51,
+      "p99": 16.53
+    },
+    "cache_rate_dist": {
+      "mean": 0.17,
+      "p50": 0.07,
+      "p90": 0.5,
+      "p99": 0.69
+    },
+    "per_turn_cache_pct": {
+      "1": 4.9,
+      "2": 57.8
+    },
+    "finish_reason_counts": {
+      "stop": 8,
+      "length": 1
+    },
+    "reasoning_content_len": {
+      "p50": 870.0,
+      "p90": 2415.8000000000006,
+      "p99": 4240.28,
+      "mean": 1300.0
+    },
+    "concurrency": 8,
+    "workers": 8,
+    "total_trials": 8,
+    "trials_per_user": 1,
+    "time_window": {
+      "start_iso": "2026-07-19T11:12:33Z",
+      "end_iso": "2026-07-19T11:17:43Z",
+      "start_unix": 1784459553.303,
+      "end_unix": 1784459863.883,
+      "duration_s": 310.58
+    },
+    "returncode": 0,
+    "log": "run.log",
+    "result": "result.json"
+  },
+  {
+    "total": 490,
+    "succeeded": 0,
+    "failed": 490,
+    "concurrency": 16,
+    "workers": 16,
+    "total_trials": 16,
+    "trials_per_user": 1,
+    "time_window": {
+      "start_iso": "2026-07-19T11:17:43Z",
+      "end_iso": "2026-07-19T11:18:11Z",
+      "start_unix": 1784459863.891,
+      "end_unix": 1784459891.576,
+      "duration_s": 27.68
+    },
+    "returncode": 0,
+    "log": "run.log",
+    "result": "result.json"
+  },
+  {
+    "total": 1168,
+    "succeeded": 0,
+    "failed": 1168,
+    "concurrency": 32,
+    "workers": 32,
+    "total_trials": 32,
+    "trials_per_user": 1,
+    "time_window": {
+      "start_iso": "2026-07-19T11:18:11Z",
+      "end_iso": "2026-07-19T11:18:44Z",
+      "start_unix": 1784459891.578,
+      "end_unix": 1784459924.935,
+      "duration_s": 33.36
+    },
+    "returncode": 0,
+    "log": "run.log",
+    "result": "result.json"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "concurrency": 8,
+    "start_iso": "2026-07-19T11:12:33Z",
+    "end_iso": "2026-07-19T11:17:43Z",
+    "start_unix": 1784459553.303,
+    "end_unix": 1784459863.883,
+    "duration_s": 310.58
+  },
+  {
+    "concurrency": 16,
+    "start_iso": "2026-07-19T11:17:43Z",
+    "end_iso": "2026-07-19T11:18:11Z",
+    "start_unix": 1784459863.891,
+    "end_unix": 1784459891.576,
+    "duration_s": 27.68
+  },
+  {
+    "concurrency": 32,
+    "start_iso": "2026-07-19T11:18:11Z",
+    "end_iso": "2026-07-19T11:18:44Z",
+    "start_unix": 1784459891.578,
+    "end_unix": 1784459924.935,
+    "duration_s": 33.36
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "total": 264,
+  "succeeded": 64,
+  "failed": 200,
+  "cache_hit_rate": 0.8272837958332013,
+  "cache_hit_populated": true,
+  "total_prompt_tokens": 2209370,
+  "total_cached_tokens": 1827776,
+  "total_completion_tokens": 165672,
+  "latency_ms": {
+    "p50": 93010.25699730963,
+    "p90": 98215.7589610666,
+    "p99": 118475.10945499875,
+    "mean": 64864.30459769326
+  },
+  "ttft_ms": {
+    "p50": 11701.823027804494,
+    "p90": 50310.085060074925,
+    "p99": 79411.94956144318,
+    "mean": 21094.679510640894
+  },
+  "tpot_ms": {
+    "mean": 14.59,
+    "p50": 19.24,
+    "p90": 23.46,
+    "p99": 23.91
+  },
+  "cache_rate_dist": {
+    "mean": 0.75,
+    "p50": 0.89,
+    "p90": 0.98,
+    "p99": 0.99
+  },
+  "per_turn_cache_pct": {
+    "1": 4.3,
+    "2": 58.9,
+    "3": 79.0,
+    "4": 87.2,
+    "5": 88.5,
+    "6": 92.3,
+    "7": 93.7,
+    "8": 97.5,
+    "9": 92.0,
+    "10": 93.6,
+    "11": 90.8,
+    "12": 97.7,
+    "13": 98.2
+  },
+  "finish_reason_counts": {
+    "length": 34,
+    "stop": 30
+  },
+  "reasoning_content_len": {
+    "p50": 1325.5,
+    "p90": 15932.2,
+    "p99": 17539.8,
+    "mean": 5442.078125
+  },
+  "concurrency": 8,
+  "workers": 8,
+  "total_trials": 8,
+  "trials_per_user": 1,
+  "time_window": {
+    "start_iso": "2026-07-19T11:42:26Z",
+    "end_iso": "2026-07-19T12:06:13Z",
+    "start_unix": 1784461346.656,
+    "end_unix": 1784462773.62,
+    "duration_s": 1426.96
+  },
+  "returncode": 0,
+  "log": "run.log",
+  "result": "result.json"
+}

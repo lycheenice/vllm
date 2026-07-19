@@ -1,0 +1,19 @@
+{
+  "total": 490,
+  "succeeded": 0,
+  "failed": 490,
+  "concurrency": 16,
+  "workers": 16,
+  "total_trials": 16,
+  "trials_per_user": 1,
+  "time_window": {
+    "start_iso": "2026-07-19T11:17:43Z",
+    "end_iso": "2026-07-19T11:18:11Z",
+    "start_unix": 1784459863.891,
+    "end_unix": 1784459891.576,
+    "duration_s": 27.68
+  },
+  "returncode": 0,
+  "log": "run.log",
+  "result": "result.json"
+}

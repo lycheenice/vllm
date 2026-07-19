@@ -1,0 +1,24 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1",
+  "model": "glm",
+  "server": "sglang",
+  "case": "pd-nixl-nocb",
+  "levels": [
+    8,
+    16,
+    32
+  ],
+  "trials_per_user": 1,
+  "max_turns": null,
+  "max_tokens": 4096,
+  "stream": true,
+  "tool_delay": "none",
+  "shuffle_seed": 42,
+  "overlap": false,
+  "offsets": {
+    "8": 0,
+    "16": 8,
+    "32": 24
+  },
+  "started_at": "2026-07-19T11:42:26Z"
+}
