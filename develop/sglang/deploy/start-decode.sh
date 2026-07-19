@@ -25,4 +25,4 @@ exec python3 -m sglang.launch_server \
     --cuda-graph-max-bs 128 \
     --disaggregation-mode decode \
     --disaggregation-transfer-backend nixl \
-    --disaggregation-bootstrap-port 8999
+    --disaggregation-bootstrap-port 8998
