@@ -39,9 +39,23 @@
 结论: 优化生效。根因被对症: SGLANG_DISAGGREGATION_QUEUE_SIZE=8+THREAD_POOL_SIZE=12 让 NIXL KV transfer 并行, decode --disaggregation-decode-enable-radix-cache 减少重复拉取。无 abort。
 c8 ramp 跑通, 等 c8 result.json 完整指标。
 
+## exp1 全量 ramp 结果 — 2026-07-19 05:15-06:33 (已保存 commit 09c539101)
+| level | trials | cache_rate | ttft p50 | 状态 |
+|---|---|---|---|---|
+| c8 | 40/40 | 0.92 (p50 0.99) | 4.95s | OK |
+| c16 | 80/80 | 0.22 (p50 0.03) | 94.80s | cache 雪崩 |
+| c32 | 160 | n/a (133s 快败, 无 lat 字段) | — | 异常 |
+| c64 | — | 0% | 301s 超时 | 2h44m 手动停 |
+
+## 退化态诊断 — 2026-07-19 09:57 (c64 风暴后未重启)
+prefill: bootstrap_queue=8, inflight=1 (串行化重现), 152 bootstrap 失败, 169 abort, 35.8M evicted
+decode: 163 abort, 10 bootstrap 失败, 5.8M evicted, KVTransferError Aborted by AbortReq
+结论: 过载后 PD 栈不可自恢复, 需重启
+根因: L1 仅 16GB/441k token (权重占 94.5GB), L2 hicache 关闭, chunked_prefill=32768 独占 batch, router 熔断误判 prefill
+
 ## 待办
-- 等 c8/c16/c32/c64/c128 各级 result.json
-- 若 prefill GPU 仍 0%, 考虑 P2+D6 或 P6+D2 重配比
-- Mooncake backend 对照 (需另起栈)
-- TP4 不分离基线
+- 优化方案已写入 04_optimization_analysis.md (Priorities P1.1-P4.2)
+- Phase A 待跑: P1.1 (开 hicache ratio=10) + P1.2 (禁熔断) + P1.3 (chunked 8192) → c8/c16/c32 验
+- Mooncake backend 对照 (P4.1)
+- TP4 不分离基线 (P4.2)
 
