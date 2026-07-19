@@ -1,0 +1,15 @@
+# Dependencies for serving the vLLM framework wiki with mkdocs.
+#
+# Install (all Python commands per the AGENTS.md rule must go through uv):
+#   uv pip install -r develop/wiki/requirements-mkdocs.txt
+#
+# Then serve:
+#   mkdocs serve -f develop/wiki/mkdocs.yml
+#
+# Build static site:
+#   mkdocs build -f develop/wiki/mkdocs.yml --site-dir develop/wiki/site
+
+mkdocs>=1.6.0
+mkdocs-material>=9.5.0
+pymdown-extensions>=10.0
+pygments>=2.15

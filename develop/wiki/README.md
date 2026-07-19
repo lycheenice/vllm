@@ -4,6 +4,8 @@
 
 代码库根目录：`/home/lychee/mycode/vllm`（所有源码引用以此为准）。
 
+> 想本地以网站形式浏览？参见 [SERVE.md](SERVE.md)（mkdocs 一键起服务，mermaid 图直接渲染）。
+
 ---
 
 ## 阅读路径

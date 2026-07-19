@@ -1,0 +1,617 @@
+# mkdocs configuration for the vLLM framework wiki.
+#
+# This is a self-contained mkdocs project rooted at develop/wiki/.
+# Serve locally:
+#   pip install -r develop/wiki/requirements-mkdocs.txt
+#   mkdocs serve -f develop/wiki/mkdocs.yml
+#
+# The nav tree below is generated from the directory structure; regenerate
+# with:
+#   python3 develop/wiki/_build_nav.py --full > develop/wiki/mkdocs.yml
+
+site_name: vLLM 框架 Wiki
+site_description: 系统性拆解 vLLM 框架的中文 Wiki（子系统 → 子模块 五段式）
+site_url: ""
+repo_url: https://github.com/lycheenice/vllm
+repo_branch: v0.25.0
+edit_uri: edit/v0.25.0/develop/wiki/
+docs_dir: .
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.path
+    - navigation.prune
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 自动切换主题
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至暗色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-2
+        name: 切换至亮色
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ja
+  - autorefs
+
+markdown_extensions:
+  - attr_list
+  - def_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lycheenice/vllm
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+
+nav:
+  - README.md
+  - "本地预览": SERVE.md
+  - "00 · 全局资产":
+    - 00-overview/README.md
+    - 00-overview/architecture.md
+    - 00-overview/glossary.md
+    - 00-overview/request-lifecycle.md
+    - 00-overview/v0-vs-v1.md
+    - 00-overview/version-timeline.md
+  - "01 · 引擎核心":
+    - 01-engine-core/README.md
+    - "KV 缓存管理":
+      - 01-engine-core/kv-cache-management/README.md
+      - 01-engine-core/kv-cache-management/block-pool.md
+      - 01-engine-core/kv-cache-management/coordinator.md
+      - 01-engine-core/kv-cache-management/encoder-cache.md
+      - 01-engine-core/kv-cache-management/kv-cache-manager.md
+      - 01-engine-core/kv-cache-management/metrics.md
+      - 01-engine-core/kv-cache-management/spec.md
+    - "调度器":
+      - 01-engine-core/scheduler/README.md
+      - 01-engine-core/scheduler/chunked-prefill.md
+      - 01-engine-core/scheduler/parallel-sampling.md
+      - 01-engine-core/scheduler/preemption.md
+      - 01-engine-core/scheduler/queues.md
+      - 01-engine-core/scheduler/scheduler.md
+    - 01-engine-core/async-llm-frontend.md
+    - 01-engine-core/data-model.md
+    - 01-engine-core/detokenizer.md
+    - 01-engine-core/dp-coordinator.md
+    - 01-engine-core/engine-core-process.md
+    - 01-engine-core/input-processor.md
+    - 01-engine-core/output-processor.md
+  - "02 · 执行层":
+    - 02-execution/README.md
+    - "Executor":
+      - 02-execution/executor/README.md
+      - 02-execution/executor/abstract.md
+      - 02-execution/executor/multiproc.md
+      - 02-execution/executor/ray-v2.md
+      - 02-execution/executor/ray.md
+      - 02-execution/executor/uniproc.md
+    - "Worker":
+      - 02-execution/worker/README.md
+      - 02-execution/worker/cpu-worker.md
+      - 02-execution/worker/cudagraph-capture.md
+      - 02-execution/worker/ec-connector-mixin.md
+      - 02-execution/worker/gpu-model-runner.md
+      - 02-execution/worker/gpu-worker.md
+      - 02-execution/worker/kv-connector-mixin.md
+      - 02-execution/worker/lora-mixin.md
+      - 02-execution/worker/model-runner-v2.md
+      - 02-execution/worker/ubatching.md
+      - 02-execution/worker/worker-base.md
+      - 02-execution/worker/xpu-worker.md
+  - "03 · 模型执行":
+    - 03-model-execution/README.md
+    - "层库":
+      - 03-model-execution/layers/README.md
+      - "量化层库":
+        - 03-model-execution/layers/quantization/README.md
+        - 03-model-execution/layers/quantization/awq.md
+        - 03-model-execution/layers/quantization/bnb.md
+        - 03-model-execution/layers/quantization/compressed-tensors.md
+        - 03-model-execution/layers/quantization/fbgemm.md
+        - 03-model-execution/layers/quantization/fp8.md
+        - 03-model-execution/layers/quantization/gptq.md
+        - 03-model-execution/layers/quantization/humming.md
+        - 03-model-execution/layers/quantization/inc.md
+        - 03-model-execution/layers/quantization/kv_cache.md
+        - 03-model-execution/layers/quantization/modelopt.md
+        - 03-model-execution/layers/quantization/moe-wna16.md
+        - 03-model-execution/layers/quantization/online.md
+        - 03-model-execution/layers/quantization/quark.md
+        - 03-model-execution/layers/quantization/schemes.md
+        - 03-model-execution/layers/quantization/torchao.md
+        - 03-model-execution/layers/quantization/turboquant.md
+        - 03-model-execution/layers/quantization/utils.md
+      - 03-model-execution/layers/activation.md
+      - 03-model-execution/layers/custom-op.md
+      - 03-model-execution/layers/embedding.md
+      - 03-model-execution/layers/fused-moe.md
+      - 03-model-execution/layers/linear.md
+      - 03-model-execution/layers/mamba-ssm.md
+      - 03-model-execution/layers/norm.md
+      - 03-model-execution/layers/parameter.md
+      - 03-model-execution/layers/pooler.md
+      - 03-model-execution/layers/rejection-sampler-layer.md
+      - 03-model-execution/layers/rotary.md
+      - 03-model-execution/layers/sampler-layer.md
+    - "模型加载器":
+      - 03-model-execution/model-loader/README.md
+      - 03-model-execution/model-loader/bnb.md
+      - 03-model-execution/model-loader/default.md
+      - 03-model-execution/model-loader/dispatch.md
+      - 03-model-execution/model-loader/ep-weight-filter.md
+      - 03-model-execution/model-loader/modelexpress.md
+      - 03-model-execution/model-loader/reload.md
+      - 03-model-execution/model-loader/runai.md
+      - 03-model-execution/model-loader/sharded-state.md
+      - 03-model-execution/model-loader/tensorizer.md
+      - 03-model-execution/model-loader/weight-utils.md
+    - 03-model-execution/kernels.md
+    - 03-model-execution/offloader.md
+    - 03-model-execution/warmup.md
+  - "04 · 模型库":
+    - 04-model-zoo/README.md
+    - "架构家族":
+      - 04-model-zoo/architecture-families/README.md
+      - 04-model-zoo/architecture-families/asian-vendor.md
+      - 04-model-zoo/architecture-families/cohere.md
+      - 04-model-zoo/architecture-families/deepseek.md
+      - 04-model-zoo/architecture-families/embedding-col.md
+      - 04-model-zoo/architecture-families/encoder-only.md
+      - 04-model-zoo/architecture-families/gemma.md
+      - 04-model-zoo/architecture-families/glm.md
+      - 04-model-zoo/architecture-families/gpt-classic.md
+      - 04-model-zoo/architecture-families/granite.md
+      - 04-model-zoo/architecture-families/internlm.md
+      - 04-model-zoo/architecture-families/kimi.md
+      - 04-model-zoo/architecture-families/llama.md
+      - 04-model-zoo/architecture-families/llava.md
+      - 04-model-zoo/architecture-families/mamba-ssm.md
+      - 04-model-zoo/architecture-families/minicpm.md
+      - 04-model-zoo/architecture-families/mistral.md
+      - 04-model-zoo/architecture-families/phi.md
+      - 04-model-zoo/architecture-families/qwen.md
+      - 04-model-zoo/architecture-families/speech-audio.md
+      - 04-model-zoo/architecture-families/vlm-misc.md
+    - 04-model-zoo/adapters.md
+    - 04-model-zoo/interfaces.md
+    - 04-model-zoo/module-mapping.md
+    - 04-model-zoo/registry.md
+    - 04-model-zoo/transformers-backend.md
+    - 04-model-zoo/vendor-split-models.md
+    - 04-model-zoo/vision.md
+  - "05 · 注意力":
+    - 05-attention/README.md
+    - "注意力后端":
+      - 05-attention/backends/README.md
+      - "MLA":
+        - 05-attention/backends/mla/README.md
+        - 05-attention/backends/mla/aiter.md
+        - 05-attention/backends/mla/cutlass.md
+        - 05-attention/backends/mla/flashattn.md
+        - 05-attention/backends/mla/flashinfer.md
+        - 05-attention/backends/mla/flashmla.md
+        - 05-attention/backends/mla/triton.md
+      - 05-attention/backends/cpu.md
+      - 05-attention/backends/flash-attn.md
+      - 05-attention/backends/flashinfer.md
+      - 05-attention/backends/flex-attention.md
+      - 05-attention/backends/linear.md
+      - 05-attention/backends/mamba.md
+      - 05-attention/backends/rocm.md
+      - 05-attention/backends/triton.md
+      - 05-attention/backends/utils.md
+    - 05-attention/backend-abstraction.md
+    - 05-attention/backend-registry.md
+    - 05-attention/ops.md
+    - 05-attention/selector.md
+  - "06 · 采样与解码":
+    - 06-sampling-decoding/README.md
+    - "投机解码":
+      - 06-sampling-decoding/speculative-decoding/README.md
+      - 06-sampling-decoding/speculative-decoding/custom-class.md
+      - 06-sampling-decoding/speculative-decoding/dflash.md
+      - 06-sampling-decoding/speculative-decoding/draft-model.md
+      - 06-sampling-decoding/speculative-decoding/dspark.md
+      - 06-sampling-decoding/speculative-decoding/dynamic.md
+      - 06-sampling-decoding/speculative-decoding/eagle.md
+      - 06-sampling-decoding/speculative-decoding/extract-hidden-states.md
+      - 06-sampling-decoding/speculative-decoding/gemma4.md
+      - 06-sampling-decoding/speculative-decoding/llm-base-proposer.md
+      - 06-sampling-decoding/speculative-decoding/medusa.md
+      - 06-sampling-decoding/speculative-decoding/metrics.md
+      - 06-sampling-decoding/speculative-decoding/mtp.md
+      - 06-sampling-decoding/speculative-decoding/ngram-gpu.md
+      - 06-sampling-decoding/speculative-decoding/ngram.md
+      - 06-sampling-decoding/speculative-decoding/step3p5.md
+      - 06-sampling-decoding/speculative-decoding/suffix.md
+      - 06-sampling-decoding/speculative-decoding/vocab-mapping.md
+    - "结构化输出":
+      - 06-sampling-decoding/structured-output/README.md
+      - 06-sampling-decoding/structured-output/backend-guidance.md
+      - 06-sampling-decoding/structured-output/backend-lm-format-enforcer.md
+      - 06-sampling-decoding/structured-output/backend-outlines.md
+      - 06-sampling-decoding/structured-output/backend-types.md
+      - 06-sampling-decoding/structured-output/backend-xgrammar.md
+      - 06-sampling-decoding/structured-output/manager.md
+      - 06-sampling-decoding/structured-output/request.md
+      - 06-sampling-decoding/structured-output/utils.md
+    - 06-sampling-decoding/logits-processor.md
+    - 06-sampling-decoding/rejection-sampler.md
+    - 06-sampling-decoding/sampler.md
+    - 06-sampling-decoding/sampling-ops.md
+    - 06-sampling-decoding/thinking-budget.md
+  - "07 · 分布式":
+    - 07-distributed/README.md
+    - "设备通信":
+      - 07-distributed/device-communicators/README.md
+      - 07-distributed/device-communicators/aiter-custom-all-reduce.md
+      - 07-distributed/device-communicators/all-reduce-utils.md
+      - 07-distributed/device-communicators/all2all.md
+      - 07-distributed/device-communicators/base.md
+      - 07-distributed/device-communicators/cpu.md
+      - 07-distributed/device-communicators/cuda-wrapper.md
+      - 07-distributed/device-communicators/cuda.md
+      - 07-distributed/device-communicators/custom-all-reduce.md
+      - 07-distributed/device-communicators/flashinfer-all-reduce.md
+      - 07-distributed/device-communicators/mnnvl-compat.md
+      - 07-distributed/device-communicators/pynccl.md
+      - 07-distributed/device-communicators/quick-all-reduce.md
+      - 07-distributed/device-communicators/ray.md
+      - 07-distributed/device-communicators/shm-broadcast.md
+      - 07-distributed/device-communicators/shm-object-storage.md
+      - 07-distributed/device-communicators/symm-mem.md
+      - 07-distributed/device-communicators/xpu.md
+    - "KV 迁移":
+      - 07-distributed/kv-transfer/README.md
+      - "传输层":
+        - 07-distributed/kv-transfer/transports/hf3fs.md
+        - 07-distributed/kv-transfer/transports/mooncake.md
+        - 07-distributed/kv-transfer/transports/moriio.md
+        - 07-distributed/kv-transfer/transports/nixl.md
+      - 07-distributed/kv-transfer/base.md
+      - 07-distributed/kv-transfer/flexkv.md
+      - 07-distributed/kv-transfer/lmcache.md
+      - 07-distributed/kv-transfer/multi.md
+      - 07-distributed/kv-transfer/offloading.md
+      - 07-distributed/kv-transfer/utils.md
+    - 07-distributed/communication-op.md
+    - 07-distributed/ec-transfer.md
+    - 07-distributed/elastic-ep.md
+    - 07-distributed/eplb.md
+    - 07-distributed/kv-events.md
+    - 07-distributed/nixl-utils.md
+    - 07-distributed/parallel-state.md
+    - 07-distributed/ray-integration.md
+    - 07-distributed/stateless-coordinator.md
+    - 07-distributed/utils.md
+    - 07-distributed/weight-transfer.md
+  - "08 · 硬件平台":
+    - 08-platforms/README.md
+    - 08-platforms/cpu.md
+    - 08-platforms/cuda.md
+    - 08-platforms/device-allocator.md
+    - 08-platforms/interface.md
+    - 08-platforms/platform-vs-allocator.md
+    - 08-platforms/plugin-resolver.md
+    - 08-platforms/rocm.md
+    - 08-platforms/tpu.md
+    - 08-platforms/xpu.md
+    - 08-platforms/zen-cpu.md
+  - "09 · 编译与 IR":
+    - 09-compilation-ir/README.md
+    - "Inductor Pass":
+      - 09-compilation-ir/passes/README.md
+      - 09-compilation-ir/passes/fusion.md
+      - 09-compilation-ir/passes/fx-utils.md
+      - 09-compilation-ir/passes/inductor-pass.md
+      - 09-compilation-ir/passes/ir.md
+      - 09-compilation-ir/passes/pass-manager.md
+      - 09-compilation-ir/passes/utility.md
+      - 09-compilation-ir/passes/vllm-inductor-pass.md
+    - 09-compilation-ir/backends.md
+    - 09-compilation-ir/base-static-graph.md
+    - 09-compilation-ir/breakable-cudagraph.md
+    - 09-compilation-ir/caching.md
+    - 09-compilation-ir/codegen.md
+    - 09-compilation-ir/compiler-interface.md
+    - 09-compilation-ir/counter.md
+    - 09-compilation-ir/cuda-graph.md
+    - 09-compilation-ir/decorators.md
+    - 09-compilation-ir/ir-README.md
+    - 09-compilation-ir/ir-op.md
+    - 09-compilation-ir/ir-ops.md
+    - 09-compilation-ir/monitor.md
+    - 09-compilation-ir/partition-rules.md
+    - 09-compilation-ir/piecewise-backend.md
+    - 09-compilation-ir/tolerances.md
+    - 09-compilation-ir/wrapper.md
+  - "10 · 配置":
+    - 10-config/README.md
+    - 10-config/attention-config.md
+    - 10-config/cache-config.md
+    - 10-config/compilation-config.md
+    - 10-config/device-config.md
+    - 10-config/diffusion-config.md
+    - 10-config/ec-transfer-config.md
+    - 10-config/kernel-config.md
+    - 10-config/kv-events-config.md
+    - 10-config/kv-transfer-config.md
+    - 10-config/load-config.md
+    - 10-config/lora-config.md
+    - 10-config/mamba-config.md
+    - 10-config/model-arch.md
+    - 10-config/model-config.md
+    - 10-config/multimodal-config.md
+    - 10-config/observability-config.md
+    - 10-config/offload-config.md
+    - 10-config/parallel-config.md
+    - 10-config/pooler-config.md
+    - 10-config/profiler-config.md
+    - 10-config/quantization-config.md
+    - 10-config/reasoning-config.md
+    - 10-config/scheduler-config.md
+    - 10-config/speculative-config.md
+    - 10-config/speech-to-text-config.md
+    - 10-config/structured-outputs-config.md
+    - 10-config/utils.md
+    - 10-config/vllm-config.md
+    - 10-config/weight-transfer-config.md
+  - "11 · 多模态":
+    - 11-multimodal/README.md
+    - 11-multimodal/audio.md
+    - 11-multimodal/cache.md
+    - 11-multimodal/encoder-budget.md
+    - 11-multimodal/evs.md
+    - 11-multimodal/gpu-ipc-memory.md
+    - 11-multimodal/hasher.md
+    - 11-multimodal/image.md
+    - 11-multimodal/inputs.md
+    - 11-multimodal/media.md
+    - 11-multimodal/parse.md
+    - 11-multimodal/processing.md
+    - 11-multimodal/registry.md
+    - 11-multimodal/utils.md
+    - 11-multimodal/v1-integration.md
+    - 11-multimodal/video.md
+  - "12 · LoRA":
+    - 12-lora/README.md
+    - 12-lora/layers.md
+    - 12-lora/lora-model.md
+    - 12-lora/lora-weights.md
+    - 12-lora/model-manager.md
+    - 12-lora/ops.md
+    - 12-lora/peft-helper.md
+    - 12-lora/punica.md
+    - 12-lora/request.md
+    - 12-lora/resolver.md
+    - 12-lora/utils.md
+    - 12-lora/v1-integration.md
+    - 12-lora/worker-manager.md
+  - "13 · API 入口":
+    - 13-entrypoints/README.md
+    - "Anthropic API":
+      - 13-entrypoints/anthropic/README.md
+      - 13-entrypoints/anthropic/serving.md
+    - "CLI":
+      - 13-entrypoints/cli/README.md
+      - 13-entrypoints/cli/bench.md
+      - 13-entrypoints/cli/collect-env-cmd.md
+      - 13-entrypoints/cli/launch-cmd.md
+      - 13-entrypoints/cli/main.md
+      - 13-entrypoints/cli/openai-cmd.md
+      - 13-entrypoints/cli/run-batch-cmd.md
+      - 13-entrypoints/cli/serve-cmd.md
+    - "Generate":
+      - 13-entrypoints/generate/README.md
+      - 13-entrypoints/generate/api-router.md
+      - 13-entrypoints/generate/base-serves.md
+      - 13-entrypoints/generate/beam-search.md
+      - 13-entrypoints/generate/factories.md
+      - 13-entrypoints/generate/generative-scoring.md
+    - "MCP":
+      - 13-entrypoints/mcp/README.md
+      - 13-entrypoints/mcp/tool-server.md
+      - 13-entrypoints/mcp/tool.md
+    - "OpenAI API":
+      - 13-entrypoints/openai/README.md
+      - 13-entrypoints/openai/api-server.md
+      - 13-entrypoints/openai/chat-completion.md
+      - 13-entrypoints/openai/cli-args.md
+      - 13-entrypoints/openai/completion.md
+      - 13-entrypoints/openai/dp-supervisor.md
+      - 13-entrypoints/openai/engine-protocol.md
+      - 13-entrypoints/openai/models.md
+      - 13-entrypoints/openai/responses.md
+      - 13-entrypoints/openai/run-batch.md
+    - "Pooling":
+      - 13-entrypoints/pooling/README.md
+      - 13-entrypoints/pooling/base.md
+      - 13-entrypoints/pooling/classify.md
+      - 13-entrypoints/pooling/embed.md
+      - 13-entrypoints/pooling/factories.md
+      - 13-entrypoints/pooling/pooling-serves.md
+      - 13-entrypoints/pooling/scoring.md
+    - "Scale-out":
+      - 13-entrypoints/scale-out/README.md
+      - 13-entrypoints/scale-out/derender.md
+      - 13-entrypoints/scale-out/factories.md
+      - 13-entrypoints/scale-out/render.md
+      - 13-entrypoints/scale-out/token-in-token-out.md
+    - "serve 工具集":
+      - 13-entrypoints/serve/README.md
+      - 13-entrypoints/serve/dev.md
+      - 13-entrypoints/serve/elastic-ep-serve.md
+      - 13-entrypoints/serve/engine-serve.md
+      - 13-entrypoints/serve/instrumentator.md
+      - 13-entrypoints/serve/lora-serves.md
+      - 13-entrypoints/serve/profile.md
+      - 13-entrypoints/serve/sagemaker.md
+      - 13-entrypoints/serve/tokenize.md
+      - 13-entrypoints/serve/utils.md
+    - "Speech-to-text":
+      - 13-entrypoints/speech-to-text/README.md
+      - 13-entrypoints/speech-to-text/base.md
+      - 13-entrypoints/speech-to-text/factories.md
+      - 13-entrypoints/speech-to-text/realtime.md
+      - 13-entrypoints/speech-to-text/transcription.md
+      - 13-entrypoints/speech-to-text/translation.md
+    - 13-entrypoints/chat-utils.md
+    - 13-entrypoints/grpc-server.md
+    - 13-entrypoints/launcher.md
+    - 13-entrypoints/llm.md
+    - 13-entrypoints/offline-utils.md
+  - "14 · 分词与转换器":
+    - 14-tokenizers-transformers/README.md
+    - "分词器":
+      - 14-tokenizers-transformers/tokenizers/README.md
+      - 14-tokenizers-transformers/tokenizers/deepseek-v32.md
+      - 14-tokenizers-transformers/tokenizers/deepseek-v4.md
+      - 14-tokenizers-transformers/tokenizers/detokenizer-utils.md
+      - 14-tokenizers-transformers/tokenizers/fastokens.md
+      - 14-tokenizers-transformers/tokenizers/hf.md
+      - 14-tokenizers-transformers/tokenizers/kimi-audio.md
+      - 14-tokenizers-transformers/tokenizers/mistral.md
+      - 14-tokenizers-transformers/tokenizers/protocol.md
+      - 14-tokenizers-transformers/tokenizers/registry.md
+    - "Tool Parsers":
+      - 14-tokenizers-transformers/tool_parsers/README.md
+      - 14-tokenizers-transformers/tool_parsers/abstract-tool-parser.md
+      - 14-tokenizers-transformers/tool_parsers/mistral.md
+    - "transformers_utils":
+      - 14-tokenizers-transformers/transformers_utils/README.md
+      - 14-tokenizers-transformers/transformers_utils/config.md
+      - 14-tokenizers-transformers/transformers_utils/processor.md
+    - 14-tokenizers-transformers/reasoning.md
+    - 14-tokenizers-transformers/renderers.md
+  - "15 · KV 缓存卸载":
+    - 15-kv-cache-offload/README.md
+    - 15-kv-cache-offload/base.md
+    - 15-kv-cache-offload/cpu.md
+    - 15-kv-cache-offload/factory.md
+    - 15-kv-cache-offload/file-mapper.md
+    - 15-kv-cache-offload/simple-kv-offload.md
+    - 15-kv-cache-offload/sleep-mode.md
+    - 15-kv-cache-offload/tiering-fs.md
+    - 15-kv-cache-offload/tiering-obj.md
+    - 15-kv-cache-offload/tiering-p2p.md
+    - 15-kv-cache-offload/tiering.md
+  - "16 · 可观测":
+    - 16-observability/README.md
+    - "Logging Utils":
+      - 16-observability/logging_utils/access-log-filter.md
+      - 16-observability/logging_utils/dump-input.md
+      - 16-observability/logging_utils/formatter.md
+      - 16-observability/logging_utils/lazy.md
+      - 16-observability/logging_utils/log-time.md
+      - 16-observability/logging_utils/logging-readme.md
+      - 16-observability/logging_utils/torch-tensor.md
+    - "Profiler":
+      - 16-observability/profiler/profiler-layer.md
+      - 16-observability/profiler/profiler-readme.md
+    - "Tracing":
+      - 16-observability/tracing/tracing.md
+    - "v1":
+      - "v1 Metrics":
+        - 16-observability/v1/metrics/loggers.md
+        - 16-observability/v1/metrics/metrics-utils.md
+        - 16-observability/v1/metrics/perf.md
+        - 16-observability/v1/metrics/prometheus.md
+        - 16-observability/v1/metrics/ray-wrappers.md
+        - 16-observability/v1/metrics/reader.md
+        - 16-observability/v1/metrics/stats.md
+    - 16-observability/logger.md
+    - 16-observability/logits-process.md
+    - 16-observability/logprobs.md
+    - 16-observability/usage.md
+  - "17 · 工具与横切":
+    - 17-utils-cross-cutting/README.md
+    - 17-utils-cross-cutting/connections.md
+    - 17-utils-cross-cutting/custom-ops.md
+    - 17-utils-cross-cutting/cute-utils.md
+    - 17-utils-cross-cutting/envs.md
+    - 17-utils-cross-cutting/exceptions.md
+    - 17-utils-cross-cutting/forward-context.md
+    - 17-utils-cross-cutting/model-inspection.md
+    - 17-utils-cross-cutting/outputs.md
+    - 17-utils-cross-cutting/parser.md
+    - 17-utils-cross-cutting/plugins.md
+    - 17-utils-cross-cutting/pooling-params.md
+    - 17-utils-cross-cutting/sampling-params.md
+    - 17-utils-cross-cutting/scalar-type.md
+    - 17-utils-cross-cutting/scripts.md
+    - 17-utils-cross-cutting/sequence.md
+    - 17-utils-cross-cutting/tasks.md
+    - 17-utils-cross-cutting/third-party.md
+    - 17-utils-cross-cutting/triton-utils.md
+    - 17-utils-cross-cutting/utils.md
+  - "18 · 构建 / CI / 测试":
+    - 18-build-ci-testing/README.md
+    - 18-build-ci-testing/csrc.md
+    - 18-build-ci-testing/misc.md
+  - "19 · 附录":
+    - 19-appendix/README.md
+    - 19-appendix/conventions.md
+    - 19-appendix/cross-reference.md
+    - 19-appendix/external-references.md
+    - 19-appendix/open-questions.md
+
