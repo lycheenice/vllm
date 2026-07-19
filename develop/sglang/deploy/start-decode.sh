@@ -24,4 +24,5 @@ exec python3 -m sglang.launch_server \
     --kv-cache-dtype fp8_e4m3 \
     --cuda-graph-max-bs 128 \
     --disaggregation-mode decode \
-    --disaggregation-transfer-backend nixl
+    --disaggregation-transfer-backend nixl \
+    --disaggregation-bootstrap-port 8999

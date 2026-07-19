@@ -1,10 +1,6 @@
 #!/bin/bash
-# PD prefill worker (NIXL backend, TP4, GPU 0-3)
+# PD baseline: TP4 single instance (no disaggregation), GPU 0-3
 set -ex
-export SGLANG_DISAGGREGATION_NIXL_BACKEND=UCX
-export UCX_TLS=cuda_ipc,cuda_copy,tcp
-export UCX_NET_DEVICES=all
-export UCX_TLS=cuda_ipc,cuda_copy,tcp
 exec python3 -m sglang.launch_server \
     --model /mnt/file/default-gpfs-official-2/GLM-5.2-W4AFP8 \
     --served-model-name glm \
@@ -23,6 +19,4 @@ exec python3 -m sglang.launch_server \
     --mem-fraction-static 0.85 \
     --watchdog-timeout 1800 \
     --kv-cache-dtype fp8_e4m3 \
-    --disaggregation-mode prefill \
-    --disaggregation-transfer-backend nixl \
-    --disaggregation-bootstrap-port 8998
+    --cuda-graph-max-bs 128
