@@ -40,7 +40,9 @@ kv_config() {   # $1=role: kv_producer|kv_consumer
     mooncake)
       # test2: 上游 MooncakeConnector(P2P)。test4 的 CPU 绕行在 code/ 里自定义,
       # 通过 VLLM_CODE_OVERRIDE 覆盖后仍复用此配置(kv_role 不变)。
-      echo '{"kv_connector":"MooncakeConnector","kv_role":"'"$role"'"}'
+      # 单机 P/D:mooncake 默认 rdma 协议会尝试 RDMA 到自身 bond IP 失败(ret=-1),
+      # 用 tcp 协议(MOONCAKE_PROTOCOL 可覆盖)。device_name 留空自动选。
+      echo '{"kv_connector":"MooncakeConnector","kv_role":"'"$role"'","kv_connector_extra_config":{"mooncake_protocol":"'"${MOONCAKE_PROTOCOL:-tcp}"'","device_name":"'"${MOONCAKE_DEVICE:-}"'"}}'
       ;;
     *) die "未知 CONNECTOR=$CONNECTOR" ;;
   esac
@@ -65,6 +67,12 @@ launch_instance() {   # $1=tag(prefill/decode/single) $2=gpus $3=port $4=kv_json
          -e UCX_TLS=cuda_ipc,cuda_copy,tcp -e VLLM_NIXL_SIDE_CHANNEL_PORT="$side" )
   elif [[ "$CONNECTOR" == "mooncake" ]]; then
     d+=( -e VLLM_MOONCAKE_BOOTSTRAP_PORT="$BOOTSTRAP_PORT" )
+    # mooncake TransferEngine 走 RDMA/RoCE:需把 host 的 IB 字符设备透传进容器
+    # (仅挂 /sys 不够,topology 探测 uverbs 需 /dev/infiniband)+ IPC_LOCK 供 pinned mem 注册。
+    d+=( --cap-add=IPC_LOCK --ulimit memlock=-1:-1 )
+    if [[ -d /dev/infiniband ]]; then
+      for ibdev in /dev/infiniband/*; do d+=( --device "$ibdev" ); done
+    fi
   fi
 
   # 代码覆盖(test4:用本实验 code/vllm 替换镜像内 vllm)
@@ -102,7 +110,7 @@ launch_proxy() {
     docker exec -d "$name" bash -lc \
       "python3 $REPO_ON_EXEC/examples/disaggregated/mooncake_connector/mooncake_connector_proxy.py \
          --prefill http://0.0.0.0:$PORT_P $BOOTSTRAP_PORT --decode http://0.0.0.0:$PORT_D \
-         --port $PROXY_PORT >$LOG_DIR/proxy.log 2>&1"
+         --port $PROXY_PORT --host 0.0.0.0 >$LOG_DIR/proxy.log 2>&1"
   fi
 }
 

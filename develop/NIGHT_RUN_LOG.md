@@ -24,7 +24,16 @@
 | 3 | verify-kvrole | ✅ 完成 | results/verify_20260721_222125;**pc/both 输出均与golden一致,KV均传输(证据66/70)→用默认 pc** |
 | 4 | test1-nixl-pd | ✅ 完成 | results/test1-nixl-pd_20260721_224311 |
 | 5 | test3-nixl-cpu-bypass | ✅ 完成 | results/test3-nixl-cpu-bypass_20260721_231532 |
-| 6 | test2-mooncake-pd | ⏭️ 跳过 | 27.8GB 镜像经 a100-2 中转仅 3.4MB/s(需1h+);且 test3≈test1 已证 connector 非瓶颈,mooncake 极可能≈test1;边际价值低,深夜中止 |
+| 6 | test2-mooncake-pd | ⛔ 阻塞 | 镜像已直传h2(RoCE 62MB/s);服务/proxy/import 均OK,但 mooncake TransferEngine 起不来:h2 RoCE NIC 只有 link-local(fe80/RoCEv1)GID,mooncake 需 RoCEv2 GID → `No available RNIC`。TCP 路径传输也失败。需 fabric 配 RoCEv2 GID |
+| - | test4-mooncake-cpu-bypass | 🧩 代码完成/实验阻塞 | DESIGN.md + code/vllm/.../mooncake_connector.py(+72行,py_compile通过);实验与 test2 同被 fabric 阻塞 |
+
+## 2026-07-22 追加(mooncake test2/test4)
+- **镜像直传解决**:h6→h2 直连(h2 已有到 h6 免密 ssh),从 h2 pull 走 RoCE eth10 **62MB/s**(a100-2 中转仅 3.4MB/s)。
+- **serve_pd 修复**:mooncake proxy 加 `--host 0.0.0.0`;mooncake 容器透传 `/dev/infiniband/*` + `--cap-add=IPC_LOCK --ulimit memlock=-1`;
+  kv_config 加 `mooncake_protocol`/`device_name`(MOONCAKE_PROTOCOL/MOONCAKE_DEVICE 覆盖)。
+- **test2 阻塞根因**:mooncake RDMA 需 RoCEv2 GID,h2 各 mlx5 只有 fe80 link-local GID(RoCEv1)→ 全设备被禁用 `No available RNIC`。属 fabric/GID 配置,非代码 bug。
+- **test4 代码**:按设计路线A实现(host pinned 镜像注册 + send前D2H + recv后H2D,复用 SupportsHMA 注入的 copy_blocks),py_compile 通过,待 on-device 验证(依赖 test2 传输通)。
+- git:develop 已提交推送 fork(lycheenice/vllm v0.25.0);本轮 mooncake 改动待再次提交。
 | - | test4-mooncake-cpu-bypass | ❌ 跳过 | code/vllm 未开发 |
 
 ## ★核心对比报告 → results_report/PD_COMPARISON.md + pd_ramp.png(make_pd_report.py 生成)
