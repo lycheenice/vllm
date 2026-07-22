@@ -1,0 +1,59 @@
+{
+  "total": 13,
+  "succeeded": 10,
+  "failed": 3,
+  "cache_hit_rate": 0.0,
+  "cache_hit_populated": false,
+  "total_prompt_tokens": 203835,
+  "total_cached_tokens": 0,
+  "total_completion_tokens": 2272,
+  "latency_ms": {
+    "p50": 15036.251796642318,
+    "p90": 17999.192865379155,
+    "p99": 18533.448520656675,
+    "mean": 14739.088824391365
+  },
+  "ttft_ms": {
+    "p50": 3425.263785291463,
+    "p90": 5286.329798866063,
+    "p99": 6197.317000804469,
+    "mean": 2846.294027334079
+  },
+  "tpot_ms": {
+    "mean": 52.57,
+    "p50": 52.57,
+    "p90": 52.66,
+    "p99": 52.86
+  },
+  "cache_rate_dist": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p99": 0.0
+  },
+  "per_turn_cache_pct": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0
+  },
+  "finish_reason_counts": {
+    "stop": 5,
+    "length": 5
+  },
+  "reasoning_content_len": null,
+  "concurrency": 1,
+  "workers": 1,
+  "total_trials": 4,
+  "trials_per_user": 4,
+  "time_window": {
+    "start_iso": "2026-07-21T12:05:47Z",
+    "end_iso": "2026-07-21T12:08:18Z",
+    "start_unix": 1784635547.673,
+    "end_unix": 1784635698.016,
+    "duration_s": 150.34
+  },
+  "returncode": 0,
+  "log": "run.log",
+  "result": "result.json"
+}

@@ -1,0 +1,41 @@
+Ubuntu 24.04.2 LTS
+Authorized uses only. All activity may be monitored and reported.
+[12:26:13] 发压: case=base1-tp8 endpoint=http://10.119.195.74:8080/v1
+[12:26:13]   levels=1,4,8,16 max-turns=4 trials/user=4 max-tokens=256
+[12:26:13]   远端输出(h200-6): /home/lychee/mycode/kvcache-benchmarks/results/base1-tp8_20260721_202630
+Ubuntu 24.04.2 LTS
+Authorized uses only. All activity may be monitored and reported.
+Ubuntu 24.04.2 LTS
+Authorized uses only. All activity may be monitored and reported.
+[WARN] Non-overlapping mode needs 116 traces but dataset has 1. Levels with offset >= 1 will receive empty trial sets.
+====================================================================
+  CONCURRENCY RAMP TEST
+====================================================================
+  Endpoint      : http://10.119.195.74:8080/v1
+  Model         : /data1/models/MiniMax-M2.5
+  Levels        : [1, 4, 8, 16]
+  Trials/user   : 4
+  Max turns     : 4
+  Max tokens    : 256
+  Streaming     : on
+  Shuffle seed  : 42
+  Tool delay    : none
+  Overlap       : no (non-overlapping traces per level)
+  Output dir    : /home/lychee/mycode/kvcache-benchmarks/results/base1-tp8_20260721_202630/
+  Started at    : 2026-07-21T12:26:37Z
+====================================================================
+Probing backend capabilities...
+Backend probe:
+  prompt_tokens:        yes
+  cached_tokens:        [WARN] no  (token-level cache hit rate will show 0%)
+  stream_options/usage: yes
+
+
+────────────────────────────────────────────────────────────────────
+  C=1    workers=1  trials=4  turns≤4  offset=0
+  Start : 2026-07-21T12:26:54Z
+Dataset:   /home/lychee/mycode/kvcache-benchmarks/data/codex_swebenchpro_traces/codex_swebenchpro.json
+Trials:    4  Requests: ~16  Model: /data1/models/MiniMax-M2.5
+Workers:   1  Streaming: on
+
+Worker [http://10.119.195.74:8080/v1]:   0%|          | 0/16 [00:00<?, ?req/s]Worker [http://10.119.195.74:8080/v1]:   6%|▋         | 1/16 [00:17<04:27, 17.81s/req]Worker [http://10.119.195.74:8080/v1]:   6%|▋         | 1/16 [00:17<04:27, 17.81s/req, cache=0% lat=17.8s]Worker [http://10.119.195.74:8080/v1]:  12%|█▎        | 2/16 [00:32<03:40, 15.76s/req, cache=0% lat=17.8s]Worker [http://10.119.195.74:8080/v1]:  12%|█▎        | 2/16 [00:32<03:40, 15.76s/req, cache=0% lat=14.3s]Worker [http://10.119.195.74:8080/v1]:  19%|█▉        | 3/16 [00:45<03:12, 14.82s/req, cache=0% lat=14.3s]Worker [http://10.119.195.74:8080/v1]:  19%|█▉        | 3/16 [00:45<03:12, 14.82s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  25%|██▌       | 4/16 [00:58<02:46, 13.87s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  25%|██▌       | 4/16 [00:58<02:46, 13.87s/req, cache=0% lat=12.4s]Worker [http://10.119.195.74:8080/v1]:  31%|███▏      | 5/16 [01:16<02:48, 15.35s/req, cache=0% lat=12.4s]Worker [http://10.119.195.74:8080/v1]:  31%|███▏      | 5/16 [01:16<02:48, 15.35s/req, cache=0% lat=18.0s]Worker [http://10.119.195.74:8080/v1]:  38%|███▊      | 6/16 [01:29<02:28, 14.81s/req, cache=0% lat=18.0s]Worker [http://10.119.195.74:8080/v1]:  38%|███▊      | 6/16 [01:29<02:28, 14.81s/req, cache=0% lat=13.8s]Worker [http://10.119.195.74:8080/v1]:  44%|████▍     | 7/16 [01:51<02:32, 16.99s/req, cache=0% lat=13.8s]Worker [http://10.119.195.74:8080/v1]:  44%|████▍     | 7/16 [01:51<02:32, 16.99s/req, cache=0% lat=21.5s]Worker [http://10.119.195.74:8080/v1]:  50%|█████     | 8/16 [02:08<02:17, 17.16s/req, cache=0% lat=21.5s]Worker [http://10.119.195.74:8080/v1]:  50%|█████     | 8/16 [02:08<02:17, 17.16s/req, cache=0% lat=17.5s]Worker [http://10.119.195.74:8080/v1]:  56%|█████▋    | 9/16 [02:22<01:52, 16.08s/req, cache=0% lat=17.5s]Worker [http://10.119.195.74:8080/v1]:  56%|█████▋    | 9/16 [02:22<01:52, 16.08s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  62%|██████▎   | 10/16 [02:40<01:39, 16.55s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  62%|██████▎   | 10/16 [02:40<01:39, 16.55s/req, cache=0% lat=17.6s]Worker [http://10.119.195.74:8080/v1]:  69%|██████▉   | 11/16 [02:53<01:18, 15.67s/req, cache=0% lat=17.6s]Worker [http://10.119.195.74:8080/v1]:  69%|██████▉   | 11/16 [02:53<01:18, 15.67s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  75%|███████▌  | 12/16 [03:07<01:00, 15.11s/req, cache=0% lat=13.7s]Worker [http://10.119.195.74:8080/v1]:  75%|███████▌  | 12/16 [03:07<01:00, 15.11s/req, cache=0% lat=13.8s]

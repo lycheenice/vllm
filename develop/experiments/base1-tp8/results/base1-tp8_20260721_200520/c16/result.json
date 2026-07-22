@@ -1,0 +1,4517 @@
+{
+  "meta": {
+    "endpoint": "http://10.119.195.74:8080/v1",
+    "model": "/data1/models/MiniMax-M2.5",
+    "concurrency": 16,
+    "dataset": "/home/lychee/mycode/kvcache-benchmarks/data/codex_swebenchpro_traces/codex_swebenchpro.json",
+    "tool_delay": "none",
+    "dp_size_affinity": null,
+    "replay_mode": "linear",
+    "duration_s": 245.6
+  },
+  "summary": {
+    "total_requests": 227,
+    "ok": 193,
+    "errors": 34,
+    "cache_hit_rate": 0.0,
+    "total_prompt_tokens": 3956153,
+    "total_cached_tokens": 0,
+    "total_completion_tokens": 46091,
+    "latency_ms": {
+      "p50": 15036.632132716477,
+      "p90": 18075.021729897708,
+      "p99": 22100.805824715644,
+      "mean": 14954.103744357168
+    },
+    "ttft_ms": {
+      "p50": 353.56038995087147,
+      "p90": 859.2661062255514,
+      "p99": 4141.264116130749,
+      "mean": 575.9768381454244
+    },
+    "finish_reason_counts": {
+      "length": 133,
+      "stop": 60
+    }
+  },
+  "workers": [
+    {
+      "worker_idx": 0,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 15,
+        "ok": 14,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 290219,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 3442,
+        "latency_ms": {
+          "p50": 15093.690383248031,
+          "p90": 17667.562320595607,
+          "p99": 21640.923008564856,
+          "mean": 15111.95214738005
+        },
+        "ttft_ms": {
+          "p50": 368.10574284754694,
+          "p90": 634.9194435868413,
+          "p99": 2143.6862608650686,
+          "mean": 493.87632074233676
+        },
+        "finish_reason_counts": {
+          "length": 13,
+          "stop": 1
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 211,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17990.220333915204,
+              "ttft_ms": 2366.276358719915,
+              "prompt_tokens": 14298,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 61.2703685301776
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15155.73665406555,
+              "ttft_ms": 428.7724569439888,
+              "prompt_tokens": 27264,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.752800773025726
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 70.78520441427827,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 86,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 22186.430304776877,
+              "ttft_ms": 654.0448367595673,
+              "prompt_tokens": 14345,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 84.44072732555807
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15247.24707286805,
+              "ttft_ms": 231.54428508132696,
+              "prompt_tokens": 18262,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.88510897171263
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15031.644112430513,
+              "ttft_ms": 408.55348436161876,
+              "prompt_tokens": 23534,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.34545344340743
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 16914.69362284988,
+              "ttft_ms": 375.57623302564025,
+              "prompt_tokens": 30338,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 64.85928388166369
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 443,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15380.447431933135,
+              "ttft_ms": 590.2935261838138,
+              "prompt_tokens": 14652,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.00060355195812
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15702.697507105768,
+              "ttft_ms": 361.1386348493397,
+              "prompt_tokens": 16609,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.16297596963305
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14804.997256956995,
+              "ttft_ms": 181.8906362168491,
+              "prompt_tokens": 18523,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.345516159765275
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14673.113867174834,
+              "ttft_ms": 217.5547811202705,
+              "prompt_tokens": 22505,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.688467004135546
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 560,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 6432.310686912388,
+              "ttft_ms": 375.07285084575415,
+              "prompt_tokens": 14055,
+              "completion_tokens": 114,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.603874655456934
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14218.311659060419,
+              "ttft_ms": 339.42382503300905,
+              "prompt_tokens": 23492,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.427011113832975
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 13950.157687067986,
+              "ttft_ms": 184.49535313993692,
+              "prompt_tokens": 24873,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.98298954481588
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 13879.3218662031,
+              "ttft_ms": 199.63122811168432,
+              "prompt_tokens": 27469,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.645845639574176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 1,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 15,
+        "ok": 14,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 258235,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 3364,
+        "latency_ms": {
+          "p50": 14302.903528092429,
+          "p90": 17529.88134343177,
+          "p99": 21495.604738886464,
+          "mean": 14784.453780057707
+        },
+        "ttft_ms": {
+          "p50": 228.63612114451826,
+          "p90": 1411.4652457181378,
+          "p99": 2109.069192647002,
+          "mean": 521.9338625736002
+        },
+        "finish_reason_counts": {
+          "length": 9,
+          "stop": 5
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 286,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17733.847874682397,
+              "ttft_ms": 1771.8306686729193,
+              "prompt_tokens": 15000,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 62.59614590591952
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 11782.202340196818,
+              "ttft_ms": 207.8233240172267,
+              "prompt_tokens": 16128,
+              "completion_tokens": 208,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.91487447429754
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 11249.56986028701,
+              "ttft_ms": 207.2681523859501,
+              "prompt_tokens": 19867,
+              "completion_tokens": 183,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.67198740604978
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 22057.706339284778,
+              "ttft_ms": 2159.461155999452,
+              "prompt_tokens": 20110,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 78.03233405209932
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 592,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 10994.582228828222,
+              "ttft_ms": 373.5052137635648,
+              "prompt_tokens": 13893,
+              "completion_tokens": 182,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.67998350864451
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15109.693851321936,
+              "ttft_ms": 183.3305493928492,
+              "prompt_tokens": 15758,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.53475804678073
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17053.95943718031,
+              "ttft_ms": 249.44891827180982,
+              "prompt_tokens": 21418,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.90004125062157
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15051.751114893705,
+              "ttft_ms": 186.0162690281868,
+              "prompt_tokens": 21673,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.29699939555105
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 308,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15645.446625072509,
+              "ttft_ms": 570.6125921569765,
+              "prompt_tokens": 13886,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.116996207511896
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13904.245011974126,
+              "ttft_ms": 468.5106137767434,
+              "prompt_tokens": 29618,
+              "completion_tokens": 237,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.93107795846348
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 79.64596757665277,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 564,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14664.216699078679,
+              "ttft_ms": 349.85186997801065,
+              "prompt_tokens": 14039,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.134764035688896
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13854.49039703235,
+              "ttft_ms": 195.98291534930468,
+              "prompt_tokens": 16468,
+              "completion_tokens": 250,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.85344370153834
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 13939.050783868879,
+              "ttft_ms": 198.3922771178186,
+              "prompt_tokens": 19535,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.8849353205924
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 13941.590357106179,
+              "ttft_ms": 185.039556119591,
+              "prompt_tokens": 20842,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.94725804308466
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 2,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 14,
+        "ok": 13,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 243862,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2941,
+        "latency_ms": {
+          "p50": 14984.85947586596,
+          "p90": 15426.245169620961,
+          "p99": 19653.636995553967,
+          "mean": 14192.273021890567
+        },
+        "ttft_ms": {
+          "p50": 228.59424306079745,
+          "p90": 388.069115485996,
+          "p99": 2780.556716434655,
+          "mean": 472.1326704423588
+        },
+        "finish_reason_counts": {
+          "stop": 5,
+          "length": 8
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 609,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15431.058631278574,
+              "ttft_ms": 3106.3847802579403,
+              "prompt_tokens": 13976,
+              "completion_tokens": 219,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.5352011514708
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 68.68256814777851,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 487,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15215.766858309507,
+              "ttft_ms": 391.15091506391764,
+              "prompt_tokens": 14379,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.13574879704153
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 12252.144318073988,
+              "ttft_ms": 182.930838316679,
+              "prompt_tokens": 16077,
+              "completion_tokens": 165,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 73.5927651204714
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 20229.44313613698,
+              "ttft_ms": 249.7210199944675,
+              "prompt_tokens": 21527,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 78.35185143585299
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15041.22945573181,
+              "ttft_ms": 209.50589096173644,
+              "prompt_tokens": 24071,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.16362182262774
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 550,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15186.47623527795,
+              "ttft_ms": 375.7419171743095,
+              "prompt_tokens": 14560,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.08131105138683
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14877.042351290584,
+              "ttft_ms": 179.50728721916676,
+              "prompt_tokens": 14858,
+              "completion_tokens": 219,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 67.41988561500649
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15406.991322990507,
+              "ttft_ms": 184.4325507991016,
+              "prompt_tokens": 16841,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.69630891055453
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 3701.022780034691,
+              "ttft_ms": 183.93737403675914,
+              "prompt_tokens": 18100,
+              "completion_tokens": 65,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.95445946871769
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 419,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 13665.656205266714,
+              "ttft_ms": 373.0862573720515,
+              "prompt_tokens": 13883,
+              "completion_tokens": 225,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.34183012452974
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14984.85947586596,
+              "ttft_ms": 287.26180316880345,
+              "prompt_tokens": 21994,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.637637932145715
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14432.602602057159,
+              "ttft_ms": 228.59424306079745,
+              "prompt_tokens": 26214,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.70199356469161
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14075.255912262946,
+              "ttft_ms": 185.46983832493424,
+              "prompt_tokens": 27382,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.46974930956083
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 3,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 13,
+        "ok": 10,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 209395,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2524,
+        "latency_ms": {
+          "p50": 15281.761371530592,
+          "p90": 18495.626474404708,
+          "p99": 21730.802078046836,
+          "mean": 16133.033097023144
+        },
+        "ttft_ms": {
+          "p50": 396.64588239975274,
+          "p90": 686.231948528438,
+          "p99": 2464.163430463523,
+          "mean": 604.6935740858316
+        },
+        "finish_reason_counts": {
+          "length": 8,
+          "stop": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 18,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 18096.222078893334,
+              "ttft_ms": 2661.711372900754,
+              "prompt_tokens": 14735,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.52749296467678
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15107.541739940643,
+              "ttft_ms": 431.17936607450247,
+              "prompt_tokens": 19816,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.554362250455455
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 22090.266034007072,
+              "ttft_ms": 332.8991737216711,
+              "prompt_tokens": 25110,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.32300729523686
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15250.266131013632,
+              "ttft_ms": 226.91507311537862,
+              "prompt_tokens": 28664,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.91510218783629
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 381,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14853.100752923638,
+              "ttft_ms": 379.54692309722304,
+              "prompt_tokens": 13932,
+              "completion_tokens": 254,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.207722647535235
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 17092.440438922495,
+              "ttft_ms": 466.73423470929265,
+              "prompt_tokens": 29183,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.19884785965962
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 67.46133789420128,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 477,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15313.256612047553,
+              "ttft_ms": 401.87378879636526,
+              "prompt_tokens": 14232,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.47601107157328
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 76.29298698157072,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 192,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15732.900175265968,
+              "ttft_ms": 391.4179760031402,
+              "prompt_tokens": 14164,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.162675291226776
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14859.254942275584,
+              "ttft_ms": 322.9003380984068,
+              "prompt_tokens": 20176,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.00531217324383
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 12935.082064941525,
+              "ttft_ms": 431.75749434158206,
+              "prompt_tokens": 29383,
+              "completion_tokens": 222,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.57612927873278
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 65.18478924408555,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 4,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 15,
+        "ok": 12,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 254252,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2965,
+        "latency_ms": {
+          "p50": 15060.767939547077,
+          "p90": 18605.592193081975,
+          "p99": 21600.819463995285,
+          "mean": 15493.925125066502
+        },
+        "ttft_ms": {
+          "p50": 360.54603406228125,
+          "p90": 389.77340552955866,
+          "p99": 3207.896798546428,
+          "mean": 586.9197809370235
+        },
+        "finish_reason_counts": {
+          "length": 9,
+          "stop": 3
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 200,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 18789.80486188084,
+              "ttft_ms": 3556.142393965274,
+              "prompt_tokens": 14236,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.73985281535516
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15080.75908292085,
+              "ttft_ms": 317.8854431025684,
+              "prompt_tokens": 19259,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.89362211693444
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 21948.24823504314,
+              "ttft_ms": 390.27334470301867,
+              "prompt_tokens": 29001,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 84.5410780013338
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 64.743691124022,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 241,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 12618.133389856666,
+              "ttft_ms": 361.17929592728615,
+              "prompt_tokens": 14405,
+              "completion_tokens": 219,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.22456006389624
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13070.599199272692,
+              "ttft_ms": 180.37453014403582,
+              "prompt_tokens": 16151,
+              "completion_tokens": 222,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.32680845759573
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15040.776796173304,
+              "ttft_ms": 359.91277219727635,
+              "prompt_tokens": 26606,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.57201578029815
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 16947.6781738922,
+              "ttft_ms": 220.86411714553833,
+              "prompt_tokens": 29883,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.59534924214377
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 155,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15764.660963788629,
+              "ttft_ms": 385.2739529684186,
+              "prompt_tokens": 14187,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.31132161105965
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15168.673598207533,
+              "ttft_ms": 362.74595418944955,
+              "prompt_tokens": 24691,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.062461349090526
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14926.614863798022,
+              "ttft_ms": 274.75749189034104,
+              "prompt_tokens": 30659,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.45826420355954
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 60.47491589561105,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 188,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 12516.302580945194,
+              "ttft_ms": 364.1492030583322,
+              "prompt_tokens": 13998,
+              "completion_tokens": 220,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.48928483053361
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14054.84975501895,
+              "ttft_ms": 269.47887195274234,
+              "prompt_tokens": 21176,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.060277972808656
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 67.14307004585862,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 5,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 16,
+        "ok": 16,
+        "errors": 0,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 375881,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 4032,
+        "latency_ms": {
+          "p50": 14938.707113964483,
+          "p90": 17933.41567646712,
+          "p99": 21514.666082547046,
+          "mean": 15349.983320280444
+        },
+        "ttft_ms": {
+          "p50": 288.7202126439661,
+          "p90": 1270.8279308862984,
+          "p99": 3213.093080720864,
+          "mean": 608.2572745217476
+        },
+        "finish_reason_counts": {
+          "length": 14,
+          "stop": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 96,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 18743.89725085348,
+              "ttft_ms": 3402.778543997556,
+              "prompt_tokens": 14047,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.16124983080754
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13622.20673635602,
+              "ttft_ms": 252.5482140481472,
+              "prompt_tokens": 20690,
+              "completion_tokens": 238,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.412061275560646
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 22003.62528814003,
+              "ttft_ms": 282.5823533348739,
+              "prompt_tokens": 27354,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.18056052864766
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15223.179758060724,
+              "ttft_ms": 286.7591353133321,
+              "prompt_tokens": 30959,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.57419852057801
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 184,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15036.632132716477,
+              "ttft_ms": 388.6923366226256,
+              "prompt_tokens": 14785,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.442901161152356
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 17122.934102080762,
+              "ttft_ms": 357.1236073039472,
+              "prompt_tokens": 25072,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.74827645010515
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15449.0299038589,
+              "ttft_ms": 278.05576799437404,
+              "prompt_tokens": 28820,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.49401621907657
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15659.935676958412,
+              "ttft_ms": 253.79290618002415,
+              "prompt_tokens": 31237,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.41624615991525
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 168,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14833.756732288748,
+              "ttft_ms": 376.54619896784425,
+              "prompt_tokens": 14324,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.69494326792511
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14840.78209521249,
+              "ttft_ms": 403.44707295298576,
+              "prompt_tokens": 26668,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.61700008729217
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14248.82986722514,
+              "ttft_ms": 290.6812899746001,
+              "prompt_tokens": 31139,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.73783755784525
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14007.554396055639,
+              "ttft_ms": 242.01198434457183,
+              "prompt_tokens": 31308,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.982519261612026
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 92,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14049.45544572547,
+              "ttft_ms": 367.7558246999979,
+              "prompt_tokens": 14358,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.65372400402146
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 11378.526790998876,
+              "ttft_ms": 196.75642903894186,
+              "prompt_tokens": 17049,
+              "completion_tokens": 210,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.501293597894424
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 13771.387162152678,
+              "ttft_ms": 214.37593875452876,
+              "prompt_tokens": 23758,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.164749895679016
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15607.999785803258,
+              "ttft_ms": 2138.208788819611,
+              "prompt_tokens": 24313,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 52.82270979209274
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 6,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 14,
+        "ok": 13,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 280371,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2991,
+        "latency_ms": {
+          "p50": 14987.476554699242,
+          "p90": 18766.384132299572,
+          "p99": 20056.85440272093,
+          "mean": 14437.53833262823
+        },
+        "ttft_ms": {
+          "p50": 352.1492718718946,
+          "p90": 2077.7487297542407,
+          "p99": 3851.002773642538,
+          "mean": 771.9855747687129
+        },
+        "finish_reason_counts": {
+          "length": 9,
+          "stop": 4
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 179,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 19122.8905338794,
+              "ttft_ms": 4041.552610695362,
+              "prompt_tokens": 14367,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.142501659545246
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 5798.065904062241,
+              "ttft_ms": 202.85549806430936,
+              "prompt_tokens": 18037,
+              "completion_tokens": 106,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.28771815236126
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 6744.717519264668,
+              "ttft_ms": 196.15685800090432,
+              "prompt_tokens": 20871,
+              "completion_tokens": 118,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.970603942425335
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 20184.21311210841,
+              "ttft_ms": 574.1944410838187,
+              "prompt_tokens": 27415,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 76.902034004018
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 83,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17340.358525980264,
+              "ttft_ms": 2453.6373019218445,
+              "prompt_tokens": 15799,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.379298917876156
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14870.882026851177,
+              "ttft_ms": 261.6159706376493,
+              "prompt_tokens": 19502,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.291239436131484
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17240.7610071823,
+              "ttft_ms": 431.4742321148515,
+              "prompt_tokens": 23858,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.91877166693116
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15350.448092911392,
+              "ttft_ms": 281.84550488367677,
+              "prompt_tokens": 26797,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.09255916873614
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 215,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 13535.87484313175,
+              "ttft_ms": 372.6826971396804,
+              "prompt_tokens": 13855,
+              "completion_tokens": 226,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.503076204409204
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 69.38077509403229,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 596,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15217.264143750072,
+              "ttft_ms": 373.4140689484775,
+              "prompt_tokens": 14323,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.21117676392782
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14987.476554699242,
+              "ttft_ms": 352.1492718718946,
+              "prompt_tokens": 24361,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.39344032481313
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 13255.467716604471,
+              "ttft_ms": 244.47625782340765,
+              "prompt_tokens": 29419,
+              "completion_tokens": 237,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.131319740597725
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14039.578343741596,
+              "ttft_ms": 249.75775880739093,
+              "prompt_tokens": 31767,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.0777277840557
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 7,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 15,
+        "ok": 12,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 246129,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2722,
+        "latency_ms": {
+          "p50": 14725.06675333716,
+          "p90": 15827.999863540754,
+          "p99": 21411.288523413245,
+          "mean": 14335.662522624867
+        },
+        "ttft_ms": {
+          "p50": 319.19852551072836,
+          "p90": 452.07080910913646,
+          "p99": 1489.568559429609,
+          "mean": 407.70725211283815
+        },
+        "finish_reason_counts": {
+          "stop": 6,
+          "length": 6
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 329,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 12160.526784602553,
+              "ttft_ms": 1617.2430077567697,
+              "prompt_tokens": 13974,
+              "completion_tokens": 171,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 62.01931633438696
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 12263.729618862271,
+              "ttft_ms": 456.56620478257537,
+              "prompt_tokens": 28701,
+              "completion_tokens": 198,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.934839665379165
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15031.686059199274,
+              "ttft_ms": 190.0776564143598,
+              "prompt_tokens": 30307,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.20238589327417
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 58.4821910597384,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 88,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 22093.360217753798,
+              "ttft_ms": 389.0787549316883,
+              "prompt_tokens": 15331,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.11482926596905
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15245.622576214373,
+              "ttft_ms": 411.6122480481863,
+              "prompt_tokens": 27982,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.17258952222034
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 63.044225331395864,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 513,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 12912.215448915958,
+              "ttft_ms": 353.56038995087147,
+              "prompt_tokens": 13923,
+              "completion_tokens": 216,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.412349111465524
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15892.708451021463,
+              "ttft_ms": 284.83666107058525,
+              "prompt_tokens": 20807,
+              "completion_tokens": 236,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 66.41647570191863
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15097.844601143152,
+              "ttft_ms": 247.53634491935372,
+              "prompt_tokens": 26074,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.23650296558352
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 118.19051904603839,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 357,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 8050.380184780806,
+              "ttft_ms": 363.80677204579115,
+              "prompt_tokens": 14014,
+              "completion_tokens": 133,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.23161676314405
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13829.742822330445,
+              "ttft_ms": 183.20570793002844,
+              "prompt_tokens": 15451,
+              "completion_tokens": 232,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.07591824415765
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14928.735706023872,
+              "ttft_ms": 208.9575626887381,
+              "prompt_tokens": 19253,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.7246201699417
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14521.397800650448,
+              "ttft_ms": 186.00571481510997,
+              "prompt_tokens": 20312,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.21722386602093
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 8,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 14,
+        "ok": 11,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 215542,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2789,
+        "latency_ms": {
+          "p50": 14870.967498980463,
+          "p90": 17314.906579907984,
+          "p99": 20056.550378119573,
+          "mean": 15915.485116272148
+        },
+        "ttft_ms": {
+          "p50": 413.89197390526533,
+          "p90": 769.1072998568416,
+          "p99": 4836.062515759842,
+          "mean": 848.1272006492046
+        },
+        "finish_reason_counts": {
+          "length": 9,
+          "stop": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 62,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 16900.79324413091,
+              "ttft_ms": 590.0460919365287,
+              "prompt_tokens": 14258,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 63.96371432233091
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14384.697967208922,
+              "ttft_ms": 533.488997258246,
+              "prompt_tokens": 29985,
+              "completion_tokens": 245,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.76724987684703
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 122.69320292398334,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 293,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17314.906579907984,
+              "ttft_ms": 769.1072998568416,
+              "prompt_tokens": 14300,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 64.88548737274958
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 20361.17746680975,
+              "ttft_ms": 5287.946428637952,
+              "prompt_tokens": 15085,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.110709953614894
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14870.967498980463,
+              "ttft_ms": 253.760005813092,
+              "prompt_tokens": 20576,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.32238232614655
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 64.76888107135892,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 15,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17228.427344933152,
+              "ttft_ms": 413.89197390526533,
+              "prompt_tokens": 14528,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.9393543961878
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14203.714459203184,
+              "ttft_ms": 243.04198799654841,
+              "prompt_tokens": 19919,
+              "completion_tokens": 240,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.412855528061236
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 88.4960750117898,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 555,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15923.269004095346,
+              "ttft_ms": 460.46618605032563,
+              "prompt_tokens": 14171,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.63844242370596
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14836.018353234977,
+              "ttft_ms": 268.71518325060606,
+              "prompt_tokens": 21123,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.12667909797792
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14734.62723288685,
+              "ttft_ms": 186.18652783334255,
+              "prompt_tokens": 22950,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.05270864726866
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14311.7371276021,
+              "ttft_ms": 322.7485246025026,
+              "prompt_tokens": 28647,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.85877883529254
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 9,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 10,
+        "ok": 6,
+        "errors": 4,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 113691,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 1348,
+        "latency_ms": {
+          "p50": 15147.081164177507,
+          "p90": 18054.750259267166,
+          "p99": 19847.142063383944,
+          "mean": 14942.270958252871
+        },
+        "ttft_ms": {
+          "p50": 421.5755760669708,
+          "p90": 1388.102093944326,
+          "p99": 2135.4928606422623,
+          "mean": 710.8361627130458
+        },
+        "finish_reason_counts": {
+          "stop": 4,
+          "length": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 314,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 16063.203810248524,
+              "ttft_ms": 2218.5362791642547,
+              "prompt_tokens": 18246,
+              "completion_tokens": 234,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.41917395315137
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 73.41010496020317,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 559,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15148.837103042752,
+              "ttft_ms": 481.80745309218764,
+              "prompt_tokens": 14781,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.51776333313946
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14336.86448680237,
+              "ttft_ms": 557.6679087243974,
+              "prompt_tokens": 24115,
+              "completion_tokens": 204,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 67.87781565555652
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 20046.29670828581,
+              "ttft_ms": 293.2539093308151,
+              "prompt_tokens": 28476,
+              "completion_tokens": 250,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 79.32948915242969
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 73.96913692355156,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 324,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 8913.098415825516,
+              "ttft_ms": 352.40772692486644,
+              "prompt_tokens": 13863,
+              "completion_tokens": 148,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.2359910809568
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 80.76889114454389,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 132,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15145.325225312263,
+              "ttft_ms": 361.343699041754,
+              "prompt_tokens": 14210,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.97639814223729
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 64.78270702064037,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 10,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 13,
+        "ok": 10,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 227659,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2489,
+        "latency_ms": {
+          "p50": 15288.48656755872,
+          "p90": 17894.353098329157,
+          "p99": 21617.06449260004,
+          "mean": 15885.059342486784
+        },
+        "ttft_ms": {
+          "p50": 378.98668134585023,
+          "p90": 747.6104757282881,
+          "p99": 1267.2586894920096,
+          "mean": 482.4102498125285
+        },
+        "finish_reason_counts": {
+          "length": 8,
+          "stop": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 333,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17434.759099036455,
+              "ttft_ms": 1324.9973799102008,
+              "prompt_tokens": 14189,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 63.17553615343629
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15354.93378713727,
+              "ttft_ms": 419.0329071134329,
+              "prompt_tokens": 26433,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.57216031381897
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 22030.69909196347,
+              "ttft_ms": 236.02765798568726,
+              "prompt_tokens": 30187,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.46929974108934
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15178.331847302616,
+              "ttft_ms": 221.7966839671135,
+              "prompt_tokens": 31507,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.65307907190393
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 22,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15013.158469926566,
+              "ttft_ms": 371.0638517513871,
+              "prompt_tokens": 14093,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.41997889480462
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 17019.60477605462,
+              "ttft_ms": 265.70333912968636,
+              "prompt_tokens": 20948,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.70157426245072
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 12607.243709266186,
+              "ttft_ms": 386.90951094031334,
+              "prompt_tokens": 31031,
+              "completion_tokens": 215,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.10436541273772
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 74.33035504072905,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 437,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15919.383185915649,
+              "ttft_ms": 555.6543730199337,
+              "prompt_tokens": 14191,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.24991691331653
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15222.039347980171,
+              "ttft_ms": 683.4563752636313,
+              "prompt_tokens": 30989,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.0140508733982
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 69.72094625234604,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 326,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 13070.440110284835,
+              "ttft_ms": 359.4604190438986,
+              "prompt_tokens": 14091,
+              "completion_tokens": 226,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.49324307218194
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 71.73132337629795,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 11,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 16,
+        "ok": 15,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 297107,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 3378,
+        "latency_ms": {
+          "p50": 14595.288216602057,
+          "p90": 17019.129411224276,
+          "p99": 21308.387763407078,
+          "mean": 13839.137470753243
+        },
+        "ttft_ms": {
+          "p50": 276.29493828862906,
+          "p90": 483.782157395035,
+          "p99": 833.3551252447066,
+          "mean": 327.9909434417884
+        },
+        "finish_reason_counts": {
+          "length": 10,
+          "stop": 5
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 247,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17007.253154646605,
+              "ttft_ms": 881.8058078177273,
+              "prompt_tokens": 14652,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 63.23704841893677
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15464.934282004833,
+              "ttft_ms": 535.729503724724,
+              "prompt_tokens": 19777,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.545901091294546
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 22005.350227002054,
+              "ttft_ms": 317.0746639370918,
+              "prompt_tokens": 24843,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.0520610316273
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 59.6960810944438,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 364,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 6840.373009908944,
+              "ttft_ms": 405.8611379005015,
+              "prompt_tokens": 14035,
+              "completion_tokens": 114,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.94258293812781
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13277.92595513165,
+              "ttft_ms": 181.03242572396994,
+              "prompt_tokens": 15361,
+              "completion_tokens": 222,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.26196167152796
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15119.007140863687,
+              "ttft_ms": 182.0171307772398,
+              "prompt_tokens": 16836,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.576431412103716
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 2742.1346148476005,
+              "ttft_ms": 181.99463095515966,
+              "prompt_tokens": 17167,
+              "completion_tokens": 48,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.47106348707321
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 418,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17027.04691560939,
+              "ttft_ms": 381.900601554662,
+              "prompt_tokens": 14520,
+              "completion_tokens": 255,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.53207210257767
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 10774.511284660548,
+              "ttft_ms": 264.4387478940189,
+              "prompt_tokens": 21169,
+              "completion_tokens": 179,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.04535133014904
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15610.081132967025,
+              "ttft_ms": 276.29493828862906,
+              "prompt_tokens": 27731,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.13249488109175
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15101.176223251969,
+              "ttft_ms": 292.09974501281977,
+              "prompt_tokens": 31898,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.074809718584895
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 331,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14595.288216602057,
+              "ttft_ms": 375.68931467831135,
+              "prompt_tokens": 14111,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.763132948720575
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14170.826234854758,
+              "ttft_ms": 219.4590838626027,
+              "prompt_tokens": 18772,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.711243729381
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 13927.85253887996,
+              "ttft_ms": 196.8117137439549,
+              "prompt_tokens": 20894,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.84721892210198
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 13923.301130067557,
+              "ttft_ms": 227.65470575541258,
+              "prompt_tokens": 25341,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.70841735024371
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 12,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 13,
+        "ok": 9,
+        "errors": 4,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 182276,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2209,
+        "latency_ms": {
+          "p50": 15306.203027721494,
+          "p90": 19070.27125051245,
+          "p99": 21900.396571327,
+          "mean": 15898.526847465999
+        },
+        "ttft_ms": {
+          "p50": 423.98003535345197,
+          "p90": 1064.5280991680925,
+          "p99": 2640.3454869426787,
+          "mean": 685.2215423973071
+        },
+        "finish_reason_counts": {
+          "length": 7,
+          "stop": 2
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 495,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 18284.125328063965,
+              "ttft_ms": 2815.4363078065217,
+              "prompt_tokens": 14227,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.661525569637035
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15022.293271962553,
+              "ttft_ms": 459.7966279834509,
+              "prompt_tokens": 22597,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.107829976388636
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 22214.854940306395,
+              "ttft_ms": 626.8010470084846,
+              "prompt_tokens": 29438,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 84.65903487567807
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 61.766888946294785,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 177,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15476.20854806155,
+              "ttft_ms": 372.6226263679564,
+              "prompt_tokens": 14406,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.22974871252389
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15008.994448930025,
+              "ttft_ms": 260.9526333399117,
+              "prompt_tokens": 20350,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.835458100353385
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17138.24535906315,
+              "ttft_ms": 475.92975199222565,
+              "prompt_tokens": 32511,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.34241414537617
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 63.48510226234794,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 42,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 10397.38867804408,
+              "ttft_ms": 361.5357228554785,
+              "prompt_tokens": 13976,
+              "completion_tokens": 186,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.24785381183028
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14238.428025040776,
+              "ttft_ms": 423.98003535345197,
+              "prompt_tokens": 20445,
+              "completion_tokens": 231,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.06281734646662
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 61.00130034610629,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 172,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15306.203027721494,
+              "ttft_ms": 369.93912886828184,
+              "prompt_tokens": 14326,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.573583917071424
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 65.69779710844159,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 13,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 14,
+        "ok": 12,
+        "errors": 2,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 237251,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2630,
+        "latency_ms": {
+          "p50": 14724.37740326859,
+          "p90": 16899.042376410216,
+          "p99": 21393.367849672217,
+          "mean": 13900.833970905902
+        },
+        "ttft_ms": {
+          "p50": 323.13074357807636,
+          "p90": 456.97917114011943,
+          "p99": 972.1179296076301,
+          "mean": 357.0720195615043
+        },
+        "finish_reason_counts": {
+          "stop": 6,
+          "length": 6
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 325,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 11714.32410320267,
+              "ttft_ms": 1034.901084844023,
+              "prompt_tokens": 14305,
+              "completion_tokens": 167,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 64.33387360457017
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 10241.92077666521,
+              "ttft_ms": 182.63175571337342,
+              "prompt_tokens": 14643,
+              "completion_tokens": 161,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 62.87055638094898
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 15032.647110987455,
+              "ttft_ms": 215.19902721047401,
+              "prompt_tokens": 18812,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.10763954422345
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 21927.066140342504,
+              "ttft_ms": 220.04402615129948,
+              "prompt_tokens": 22985,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.12557691839687
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 478,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15240.169028751552,
+              "ttft_ms": 374.91405103355646,
+              "prompt_tokens": 14144,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.29511755967842
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 8800.772107206285,
+              "ttft_ms": 206.73003420233727,
+              "prompt_tokens": 18093,
+              "completion_tokens": 154,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.17020962747678
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17075.263497885317,
+              "ttft_ms": 191.10492104664445,
+              "prompt_tokens": 20681,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 66.21238657583793
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15313.052283134311,
+              "ttft_ms": 464.14512814953923,
+              "prompt_tokens": 31634,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.231008450920676
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 483,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 9612.087959889323,
+              "ttft_ms": 392.48555805534124,
+              "prompt_tokens": 14361,
+              "completion_tokens": 156,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.48130581828375
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 14957.639678381383,
+              "ttft_ms": 347.40213910117745,
+              "prompt_tokens": 24138,
+              "completion_tokens": 248,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 59.15075926834091
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 12403.949836269021,
+              "ttft_ms": 298.85934805497527,
+              "prompt_tokens": 29348,
+              "completion_tokens": 208,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.47869801069587
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 69.81278397142887,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 491,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14491.115128155798,
+              "ttft_ms": 356.4471611753106,
+              "prompt_tokens": 14107,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.43007045874701
+            },
+            {
+              "turn_idx": 1,
+              "status": "error",
+              "latency_ms": 59.56228729337454,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 14,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 14,
+        "ok": 11,
+        "errors": 3,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 239512,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 2741,
+        "latency_ms": {
+          "p50": 15169.190924149007,
+          "p90": 17199.512797873467,
+          "p99": 19727.893331693485,
+          "mean": 15826.622591057623
+        },
+        "ttft_ms": {
+          "p50": 429.09717792645097,
+          "p90": 3848.6630972474813,
+          "p99": 5345.819147536532,
+          "mean": 1338.1895415738902
+        },
+        "finish_reason_counts": {
+          "stop": 4,
+          "length": 7
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 462,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 16008.657948113978,
+              "ttft_ms": 3848.6630972474813,
+              "prompt_tokens": 14029,
+              "completion_tokens": 222,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.022601135142516
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15169.190924149007,
+              "ttft_ms": 338.63123785704374,
+              "prompt_tokens": 23328,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.15905759330182
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 58.4525796584785,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 383,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 17199.512797873467,
+              "ttft_ms": 429.09717792645097,
+              "prompt_tokens": 14103,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 65.76633576449811
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 20008.824502117932,
+              "ttft_ms": 5512.16981979087,
+              "prompt_tokens": 31092,
+              "completion_tokens": 248,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.69090964504883
+            },
+            {
+              "turn_idx": 2,
+              "status": "error",
+              "latency_ms": 71.74956006929278,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 8,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15100.421600975096,
+              "ttft_ms": 444.3344669416547,
+              "prompt_tokens": 14903,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.47485150601349
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13876.629007048905,
+              "ttft_ms": 183.6782582104206,
+              "prompt_tokens": 16540,
+              "completion_tokens": 237,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.02097774931561
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17197.328351903707,
+              "ttft_ms": 2395.363627001643,
+              "prompt_tokens": 25395,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.04692048981202
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15657.825234346092,
+              "ttft_ms": 354.78490218520164,
+              "prompt_tokens": 31033,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 60.01192287121918
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 237,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14420.405481941998,
+              "ttft_ms": 557.0656228810549,
+              "prompt_tokens": 14177,
+              "completion_tokens": 242,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.52423178033586
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15076.572373975068,
+              "ttft_ms": 368.00440214574337,
+              "prompt_tokens": 24530,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.680658713056175
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14377.480279188603,
+              "ttft_ms": 288.29234512522817,
+              "prompt_tokens": 30382,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 55.251717388483826
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 58.940045069903135,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "worker_idx": 15,
+      "endpoint": "http://10.119.195.74:8080/v1",
+      "summary": {
+        "total_requests": 16,
+        "ok": 15,
+        "errors": 1,
+        "cache_hit_rate": 0.0,
+        "total_prompt_tokens": 284771,
+        "total_cached_tokens": 0,
+        "total_completion_tokens": 3526,
+        "latency_ms": {
+          "p50": 14643.661780282855,
+          "p90": 16480.735075473785,
+          "p99": 17208.057214142755,
+          "mean": 14357.897393777966
+        },
+        "ttft_ms": {
+          "p50": 301.79431196302176,
+          "p90": 394.14471108466387,
+          "p99": 585.736516714096,
+          "mean": 302.91650475313264
+        },
+        "finish_reason_counts": {
+          "stop": 7,
+          "length": 8
+        }
+      },
+      "trials": [
+        {
+          "trial_idx": 0,
+          "dataset_idx": 59,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15537.199916318059,
+              "ttft_ms": 301.79431196302176,
+              "prompt_tokens": 14638,
+              "completion_tokens": 240,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 63.74646696382861
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 15178.368286695331,
+              "ttft_ms": 353.71002508327365,
+              "prompt_tokens": 15355,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.13591475141983
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 17224.05932797119,
+              "ttft_ms": 343.734310939908,
+              "prompt_tokens": 22549,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 66.19735300796582
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 17109.758514910936,
+              "ttft_ms": 330.51717188209295,
+              "prompt_tokens": 28536,
+              "completion_tokens": 198,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 85.17381392400428
+            }
+          ]
+        },
+        {
+          "trial_idx": 1,
+          "dataset_idx": 358,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 15168.132911901921,
+              "ttft_ms": 392.2008778899908,
+              "prompt_tokens": 14983,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 57.94483150592914
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 12964.020745828748,
+              "ttft_ms": 191.4847237057984,
+              "prompt_tokens": 17371,
+              "completion_tokens": 218,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.85961300517488
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 12800.231934059411,
+              "ttft_ms": 214.28839210420847,
+              "prompt_tokens": 21341,
+              "completion_tokens": 181,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 69.9219085664178
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 15205.671347212046,
+              "ttft_ms": 336.1065429635346,
+              "prompt_tokens": 27040,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.31201884019024
+            }
+          ]
+        },
+        {
+          "trial_idx": 2,
+          "dataset_idx": 540,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14849.271537736058,
+              "ttft_ms": 616.7149217799306,
+              "prompt_tokens": 13883,
+              "completion_tokens": 243,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.812217421306315
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 12974.895912688226,
+              "ttft_ms": 220.01009387895465,
+              "prompt_tokens": 14779,
+              "completion_tokens": 220,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 58.241487757119955
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 14643.661780282855,
+              "ttft_ms": 223.26830122619867,
+              "prompt_tokens": 19745,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 56.55056266296728
+            },
+            {
+              "turn_idx": 3,
+              "status": "success",
+              "latency_ms": 14055.453604087234,
+              "ttft_ms": 185.3516260161996,
+              "prompt_tokens": 21360,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 54.39255677674915
+            }
+          ]
+        },
+        {
+          "trial_idx": 3,
+          "dataset_idx": 24,
+          "turns": [
+            {
+              "turn_idx": 0,
+              "status": "success",
+              "latency_ms": 14109.02873892337,
+              "ttft_ms": 395.4405998811126,
+              "prompt_tokens": 15295,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.77877701585199
+            },
+            {
+              "turn_idx": 1,
+              "status": "success",
+              "latency_ms": 13904.73784506321,
+              "ttft_ms": 183.57503693550825,
+              "prompt_tokens": 15899,
+              "completion_tokens": 256,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "length",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.80848160050079
+            },
+            {
+              "turn_idx": 2,
+              "status": "success",
+              "latency_ms": 9643.968502990901,
+              "ttft_ms": 255.55063504725695,
+              "prompt_tokens": 21997,
+              "completion_tokens": 178,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "stop",
+              "reasoning_content_len": 0,
+              "error_msg": "",
+              "tpot_ms": 53.04190885843867
+            },
+            {
+              "turn_idx": 3,
+              "status": "error",
+              "latency_ms": 69.03229095041752,
+              "ttft_ms": 0,
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "cached_tokens": 0,
+              "cached_tokens_reported": false,
+              "cache_hit_rate": 0.0,
+              "tool_delay_ms": 0.0,
+              "finish_reason": "",
+              "reasoning_content_len": 0,
+              "error_msg": "HTTP 400: This model's maximum context length is 32768 tokens. However, you requested 256 output tokens and your prompt contains at least 32513 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=32513)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

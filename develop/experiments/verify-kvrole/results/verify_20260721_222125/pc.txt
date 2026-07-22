@@ -1,0 +1,29 @@
+The answer is that the sky is blue because of Rayleigh scattering. But that is not a complete answer - it doesn't explain why Rayleigh scattering makes the sky blue. The complete answer is that the sky is blue because of Rayleigh scattering, which scatters short-wavelength light more than long-wavelength light, so blue light is
+----
+The function should take an integer n as input and return the Fibonacci number at position n. The Fibonacci sequence is defined as: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.
+
+Here
+----
+The first sentence should describe the beginning of the play, and the second sentence should describe the ending.
+
+The first sentence should describe the beginning of the play, and the second sentence should describe the ending.
+
+The first sentence should describe the beginning of the play, and the second sentence should describe the ending.
+
+The first sentence should
+----
+",
+    "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(log n)"
+    ],
+    "answer": "O(n log n)"
+},
+{
+    "question": "Which data structure is used to implement a priority queue?",
+    "
+----
+The answer is 'bonjour, comment allez-vous' or 'bonjour, ça va'. The user might also want a more formal version. The answer should be simple and direct. The user might be a language learner or someone traveling to a French-speaking country. The user might want to know the correct pronunciation as well
+----

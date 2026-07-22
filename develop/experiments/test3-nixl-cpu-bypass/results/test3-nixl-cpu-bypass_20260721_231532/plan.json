@@ -1,0 +1,26 @@
+{
+  "endpoint": "http://10.119.195.74:8020/v1",
+  "model": "/data1/models/MiniMax-M2.5",
+  "server": "vllm",
+  "case": "test3-nixl-cpu-bypass",
+  "levels": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "trials_per_user": 4,
+  "max_turns": 4,
+  "max_tokens": 256,
+  "stream": true,
+  "tool_delay": "none",
+  "shuffle_seed": 42,
+  "overlap": false,
+  "offsets": {
+    "1": 0,
+    "4": 4,
+    "8": 20,
+    "16": 52
+  },
+  "started_at": "2026-07-21T15:15:48Z"
+}
