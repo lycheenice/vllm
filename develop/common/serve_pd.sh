@@ -40,9 +40,9 @@ kv_config() {   # $1=role: kv_producer|kv_consumer
     mooncake)
       # test2: 上游 MooncakeConnector(P2P)。test4 的 CPU 绕行在 code/ 里自定义,
       # 通过 VLLM_CODE_OVERRIDE 覆盖后仍复用此配置(kv_role 不变)。
-      # 单机 P/D:mooncake 默认 rdma 协议会尝试 RDMA 到自身 bond IP 失败(ret=-1),
-      # 用 tcp 协议(MOONCAKE_PROTOCOL 可覆盖)。device_name 留空自动选。
-      echo '{"kv_connector":"MooncakeConnector","kv_role":"'"$role"'","kv_connector_extra_config":{"mooncake_protocol":"'"${MOONCAKE_PROTOCOL:-tcp}"'","device_name":"'"${MOONCAKE_DEVICE:-}"'"}}'
+      # 单机 P/D:CPU 端已验证 rdma + MC_GID_INDEX=3(见下方 env)可通(数据实测送达);
+      # tcp 路径此前失败,故默认 rdma(MOONCAKE_PROTOCOL 可覆盖)。device_name 留空自动选。
+      echo '{"kv_connector":"MooncakeConnector","kv_role":"'"$role"'","kv_connector_extra_config":{"mooncake_protocol":"'"${MOONCAKE_PROTOCOL:-rdma}"'","device_name":"'"${MOONCAKE_DEVICE:-}"'"}}'
       ;;
     *) die "未知 CONNECTOR=$CONNECTOR" ;;
   esac
