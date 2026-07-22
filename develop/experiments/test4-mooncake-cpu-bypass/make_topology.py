@@ -10,6 +10,9 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 1600, 1010
+# cairosvg 用 cairo toy font,不做逐字形 fallback,须用单一含 CJK+Latin 的字体。
+# a100-2 /root/.fonts/MergedCJKLatin.ttf 正是合并字体(中英文全覆盖)。
+FONT = "MergedCJKLatin"
 
 # 每 GPU 一条 lane;(GPU 名, NIC 名, NUMA)
 NUMA0 = [("GPU0", "CX-7\nmlx5_0"), ("GPU1", "CX-7\nmlx5_1"),
@@ -41,7 +44,7 @@ def text(x, y, t, size=15, col=C["txt"], anchor="middle", weight="normal"):
     for k, ln in enumerate(t.split("\n")):
         s.append(f'<text x="{x}" y="{y + k*(size+2)}" font-size="{size}" '
                  f'fill="{col}" text-anchor="{anchor}" font-weight="{weight}" '
-                 f'font-family="DejaVu Sans, sans-serif">{ln}</text>')
+                 f'font-family="{FONT}">{ln}</text>')
 
 s.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
          f'viewBox="0 0 {W} {H}">')
