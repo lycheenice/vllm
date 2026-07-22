@@ -1,7 +1,8 @@
 # test4 — MooncakeConnector CPU 中转(host-staging)设计文档
 
-**日期**: 2026-07-22 · **vLLM**: v0.25.0 · **状态**: 设计完成 + 代码已实现(py_compile 通过),
-**待 on-device 验证**(当前被 h200-2 的 mooncake RoCE fabric 阻塞,见 §4)。
+**日期**: 2026-07-22 · **vLLM**: v0.25.0 · **状态**: 设计完成 + 代码已实现(py_compile 通过)。
+**mooncake 传输阻塞根因已定位并 CPU 端验证**:需 `MC_GID_INDEX=3`(RoCEv2 GID index),已固化进
+serve_pd.sh;完整 PD bench 待 h200-2 GPU 空闲。
 **目标**: 给上游 `MooncakeConnector`(P2P GPU 直传)加 `kv_buffer_device=cpu` 语义 —— KV 先 D2H
 落宿主 pinned DRAM,经 mooncake 传输,对端 H2D 回显存。用于与 **test3**(nixl + CPU 中转)横向对比,
 并补齐"connector × 传输设备(GPU 直传/CPU 中转)"矩阵的最后一格。
@@ -165,3 +166,24 @@ bind-mount 单文件覆盖进容器(免整包挂载)。
 ### 对 test4 的影响
 test4 实验依赖 mooncake 传输可用,与 test2 同被上述 GID 问题阻塞。**代码已实现**(见 §落地约定 + 上方实现清单),
 待 mooncake 传输在单机跑通后 on-device 验证。注:test3 已证 KV 传输方式非 PD 瓶颈,test4/test2 预期结论与 test1 同量级。
+
+### ★根因定位与修复(2026-07-22 CPU 端验证,已解决)
+用户实测 `ib_write_bw -d mlx5_1` 跨 NIC 通,证明 fabric/RoCEv2 正常 → 之前"没有 RoCEv2 GID / fabric 问题"的判断**错误**。CPU 端逐项定位:
+1. **GID 表**(`show_gids`):h200-2 各 mlx5(含 mlx5_bond_0)**都有 RoCEv2 GID,在 index 3**(index 0/2 是 RoCEv1)。
+   - mlx5_bond_0 idx3 = 10.119.195.74(bond1,RoCEv2);各 CX-7 idx3 = 100.76.x(RoCEv2)。
+2. **mooncake 报错串**(strings engine.so):`GID is NULL, please check your GID index by specifying MC_GID_INDEX`。
+   即 mooncake **不会自动选 RoCEv2 GID index**,默认取到无效/RoCEv1 → `GID -1 / No available RNIC`。
+3. **CPU 端实测**(挂 libcuda、不占 GPU):`MC_GID_INDEX=3` 时 `TransferEngine.initialize` 对 mlx5_1 /
+   mlx5_bond_0 / auto **全部 ret=0**,日志 `Using user-specified GID index: 3`。
+4. **两进程 RDMA 收发自测**(host pinned buffer,MC_GID_INDEX=3):接收端 buffer **正确收到发送端 0xAB 数据**
+   (`ALL_BYTES_0xAB=True`)→ **RoCEv2 RDMA 数据真的传通**。`transfer_sync_write ret=-1` 仅因纯 CPU 无 GPU:
+   `cudaPointerGetAttributes failed: no CUDA-capable device`,mooncake 完成 ack 超时(生产有 GPU 不会发生)。
+
+**修复(已固化 serve_pd.sh)**:mooncake 容器加 `-e MC_GID_INDEX=3`(+ 已有的 `/dev/infiniband` 透传、
+`--cap-add=IPC_LOCK --ulimit memlock=-1`、`--network host`)。`MC_GID_INDEX` 可被环境覆盖;换机器用
+`show_gids` 确认 RoCEv2 的 index。
+
+**关于 Q1(单机为何还走 RDMA)仍成立**:mooncake TransferEngine 只有 rdma/tcp,单机 PD 也经 CX NIC 的
+RoCEv2 RDMA(不像 nixl 用 cuda_ipc 走 NVLink)。GID index 修好后这条路是通的,只是仍不占 NVLink 便宜。
+- **NUMA 亲和优化(后续)**:auto 发现所有 NIC;P(GPU0-3,NUMA0)理想用 mlx5_0-3,D(GPU4-7,NUMA1)用
+  mlx5_4/5/6/9,避免跨 NUMA(SYS)。可用 `MOONCAKE_DEVICE`/`device_name` 按实例 pin。

@@ -70,6 +70,10 @@ launch_instance() {   # $1=tag(prefill/decode/single) $2=gpus $3=port $4=kv_json
     # mooncake TransferEngine 走 RDMA/RoCE:需把 host 的 IB 字符设备透传进容器
     # (仅挂 /sys 不够,topology 探测 uverbs 需 /dev/infiniband)+ IPC_LOCK 供 pinned mem 注册。
     d+=( --cap-add=IPC_LOCK --ulimit memlock=-1:-1 )
+    # RoCEv2 GID index:h200-2 各 mlx5 的 RoCEv2 GID 在 index 3(RoCEv1 在 0/2)。mooncake 不会
+    # 自动选,不设会报 "GID is NULL / GID -1 / No available RNIC"。CPU 端实测 MC_GID_INDEX=3 时
+    # initialize 返回 0(mlx5_1/mlx5_bond_0/auto 均通)。用 `show_gids` 确认目标机的 v2 index。
+    d+=( -e MC_GID_INDEX="${MC_GID_INDEX:-3}" )
     if [[ -d /dev/infiniband ]]; then
       for ibdev in /dev/infiniband/*; do d+=( --device "$ibdev" ); done
     fi

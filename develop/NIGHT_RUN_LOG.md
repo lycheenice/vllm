@@ -42,6 +42,15 @@
 - **Q2(是否容器参数/host network)**:用了 `--network host`;缺 `/dev/infiniband` 透传已补;
   剩余卡在 mooncake 只取到 link-local(RoCEv1)GID index0 → `No available RNIC`。鉴于 fabric 实测正常,
   **修正**:非 fabric 问题,而是 RoCEv2 GID index 选择 / 单机回环,未在交回前解决。详见 DESIGN.md §4。
+
+## 2026-07-22 mooncake 根因定位 + CPU 验证(已解决,GPU 端待跑)
+- 用户 `ib_write_bw -d mlx5_1` 通 → fabric/RoCEv2 正常。CPU 端(挂 libcuda 不占 GPU)定位:
+- **根因**:h200-2 各 mlx5(含 mlx5_bond_0)**都有 RoCEv2 GID,在 index 3**;mooncake **不自动选**,不设
+  `MC_GID_INDEX` 就报 `GID is NULL / GID -1 / No available RNIC`(engine.so 里有此提示串)。get_ip()=bond1
+  更让它绑到 mlx5_bond_0。**非 fabric、非 host-network 问题**——之前判断已修正。
+- **验证**:`MC_GID_INDEX=3` 时 `initialize` 对 mlx5_1/mlx5_bond_0/auto 全 ret=0;两进程 host-buffer RDMA
+  自测**数据正确送达(0xAB 全中)**。`transfer ret=-1` 仅纯 CPU 无 GPU 的 `cudaPointerGetAttributes` 假象。
+- **修复**:serve_pd.sh mooncake 容器加 `-e MC_GID_INDEX=3`(可 env 覆盖)。test2/test4 完整 PD bench 待 GPU 空闲。
 | - | test4-mooncake-cpu-bypass | ❌ 跳过 | code/vllm 未开发 |
 
 ## ★核心对比报告 → results_report/PD_COMPARISON.md + pd_ramp.png(make_pd_report.py 生成)
