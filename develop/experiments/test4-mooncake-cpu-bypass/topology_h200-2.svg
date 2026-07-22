@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1010" viewBox="0 0 1600 1010">
+<rect x="0" y="0" width="1600" height="1010" rx="0" fill="#0f172a" stroke="none" stroke-width="1"/>
+<text x="800.0" y="38" font-size="26" fill="#f1f5f9" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">h200-2 硬件拓扑:CPU / GPU / NIC / PCIe Switch</text>
+<text x="800.0" y="62" font-size="14" fill="#cbd5e1" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">2×Xeon Platinum 8558 (2 NUMA) · 8×H200 (NVSwitch 全互联) · 8×ConnectX-7 (每GPU一张,GPUDirect) · PEX890xx Gen5 switch</text>
+<rect x="70" y="82" width="1460" height="44" rx="10" fill="#7c3aed" stroke="none" stroke-width="1"/>
+<text x="800.0" y="110" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">NVSwitch fabric — 8×GPU 全互联 NVLink (NV18 ≈ 18-link bonded, ~900 GB/s/GPU)</text>
+<rect x="80" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="155.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="155.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="90" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="155.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU0</text>
+<text x="155.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="155.0" y1="178" x2="155.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="98" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="155.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="155.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_0</text>
+<line x1="155.0" y1="244" x2="155.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="159.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="255" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="330.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="330.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="265" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="330.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU1</text>
+<text x="330.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="330.0" y1="178" x2="330.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="273" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="330.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="330.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_1</text>
+<line x1="330.0" y1="244" x2="330.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="334.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="430" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="505.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="505.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="440" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="505.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU2</text>
+<text x="505.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="505.0" y1="178" x2="505.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="448" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="505.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="505.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_2</text>
+<line x1="505.0" y1="244" x2="505.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="509.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="605" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="680.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="680.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="615" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="680.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU3</text>
+<text x="680.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="680.0" y1="178" x2="680.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="623" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="680.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="680.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_3</text>
+<line x1="680.0" y1="244" x2="680.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="684.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="850" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="925.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="925.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="860" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="925.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU4</text>
+<text x="925.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="925.0" y1="178" x2="925.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="868" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="925.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="925.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_4</text>
+<line x1="925.0" y1="244" x2="925.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="929.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="1025" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1100.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="1100.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="1035" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="1100.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU5</text>
+<text x="1100.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="1100.0" y1="178" x2="1100.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="1043" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="1100.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="1100.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_5</text>
+<line x1="1100.0" y1="244" x2="1100.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="1104.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="1200" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1275.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="1275.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="1210" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="1275.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU6</text>
+<text x="1275.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="1275.0" y1="178" x2="1275.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="1218" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="1275.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="1275.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_6</text>
+<line x1="1275.0" y1="244" x2="1275.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="1279.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<rect x="1375" y="162" width="150" height="300" rx="10" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1450.0" y="452" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">PCIe Switch</text>
+<text x="1450.0" y="468" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(PEX890xx)</text>
+<rect x="1385" y="178" width="130" height="66" rx="8" fill="#16a34a" stroke="#065f16" stroke-width="2"/>
+<text x="1450.0" y="208" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">GPU7</text>
+<text x="1450.0" y="228" font-size="11" fill="#dcfce7" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">H200 141GB</text>
+<line x1="1450.0" y1="178" x2="1450.0" y2="126" stroke="#a78bfa" stroke-width="3"/>
+<rect x="1393" y="356" width="114" height="62" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="2"/>
+<text x="1450.0" y="382" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CX-7</text>
+<text x="1450.0" y="400" font-size="12" fill="#ffedd5" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">mlx5_9</text>
+<line x1="1450.0" y1="244" x2="1450.0" y2="356" stroke="#94a3b8" stroke-width="2"/>
+<text x="1454.0" y="304.0" font-size="11" fill="#fbbf24" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">PIX</text>
+<line x1="155.0" y1="462" x2="155.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="925.0" y1="462" x2="925.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="330.0" y1="462" x2="330.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="1100.0" y1="462" x2="1100.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="505.0" y1="462" x2="505.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="1275.0" y1="462" x2="1275.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="680.0" y1="462" x2="680.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<line x1="1450.0" y1="462" x2="1450.0" y2="540" stroke="#94a3b8" stroke-width="2"/>
+<rect x="80" y="540" width="675" height="92" rx="8" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+<text x="417.5" y="578" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CPU0 · Xeon Platinum 8558 (48c)</text>
+<text x="417.5" y="602" font-size="13" fill="#cbd5e1" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">NUMA node0 · CPU 0-47 · PCIe Gen5 Root</text>
+<rect x="850" y="540" width="675" height="92" rx="8" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+<text x="1187.5" y="578" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">CPU1 · Xeon Platinum 8558 (48c)</text>
+<text x="1187.5" y="602" font-size="13" fill="#cbd5e1" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">NUMA node1 · CPU 48-95 · PCIe Gen5 Root</text>
+<line x1="755" y1="586.0" x2="850" y2="586.0" stroke="#f59e0b" stroke-width="4"/>
+<text x="802.5" y="576.0" font-size="15" fill="#fbbf24" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">UPI</text>
+<text x="802.5" y="608.0" font-size="11" fill="#fbbf24" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">(跨NUMA=SYS)</text>
+<rect x="80" y="654" width="330" height="46" rx="8" fill="#64748b" stroke="none" stroke-width="1"/>
+<text x="245" y="683" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">DDR5  ~1 TB (NUMA0)</text>
+<line x1="245" y1="632" x2="245" y2="654" stroke="#94a3b8" stroke-width="2"/>
+<rect x="1195" y="654" width="330" height="46" rx="8" fill="#64748b" stroke="none" stroke-width="1"/>
+<text x="1360" y="683" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">DDR5  ~1 TB (NUMA1)</text>
+<line x1="1360" y1="632" x2="1360" y2="654" stroke="#94a3b8" stroke-width="2"/>
+<rect x="850" y="654" width="360" height="46" rx="8" fill="#dc2626" stroke="none" stroke-width="1"/>
+<text x="1030.0" y="674" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" font-family="DejaVu Sans, sans-serif">ConnectX-6 Dx 双口 bond = mlx5_bond_0</text>
+<text x="1030.0" y="692" font-size="11" fill="#fecaca" text-anchor="middle" font-weight="normal" font-family="DejaVu Sans, sans-serif">bond1 10.119.195.74(前端/管理网,非GPUDirect)</text>
+<line x1="1030.0" y1="632" x2="1030.0" y2="654" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="70" y="726" width="1460" height="168" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+<text x="90" y="752" font-size="15" fill="#f1f5f9" text-anchor="start" font-weight="bold" font-family="DejaVu Sans, sans-serif">图例 / 连接层级(源自 nvidia-smi topo -m)</text>
+<rect x="92" y="763" width="20" height="16" rx="3" fill="#a78bfa"/>
+<text x="120" y="776" font-size="13" fill="#f1f5f9" text-anchor="start" font-weight="bold" font-family="DejaVu Sans, sans-serif">NV18</text>
+<text x="180" y="776" font-size="13" fill="#cbd5e1" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">GPU↔GPU 18-link NVLink(经 NVSwitch,全 8 卡 all-to-all)</text>
+<rect x="92" y="790" width="20" height="16" rx="3" fill="#fbbf24"/>
+<text x="120" y="803" font-size="13" fill="#f1f5f9" text-anchor="start" font-weight="bold" font-family="DejaVu Sans, sans-serif">PIX</text>
+<text x="180" y="803" font-size="13" fill="#cbd5e1" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">GPU 与其 NIC 同一 PCIe switch(单桥)→ GPUDirect RDMA 最短路径</text>
+<rect x="92" y="817" width="20" height="16" rx="3" fill="#94a3b8"/>
+<text x="120" y="830" font-size="13" fill="#f1f5f9" text-anchor="start" font-weight="bold" font-family="DejaVu Sans, sans-serif">NODE</text>
+<text x="180" y="830" font-size="13" fill="#cbd5e1" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">同 NUMA 内跨 PCIe host bridge(如 GPU0↔mlx5_1)</text>
+<rect x="92" y="844" width="20" height="16" rx="3" fill="#f59e0b"/>
+<text x="120" y="857" font-size="13" fill="#f1f5f9" text-anchor="start" font-weight="bold" font-family="DejaVu Sans, sans-serif">SYS</text>
+<text x="180" y="857" font-size="13" fill="#cbd5e1" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">跨 NUMA,经 UPI(如 GPU0↔GPU4 的 PCIe 路径 / mlx5_bond_0↔GPU0-3)</text>
+<text x="90" y="888" font-size="13" fill="#a7f3d0" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">对 PD 实验的意义:P(GPU0-3)↔D(GPU4-7)的 KV 传输——nixl 用 UCX cuda_ipc 走 NVLink(NV18,免网卡);</text>
+<text x="90" y="908" font-size="13" fill="#a7f3d0" text-anchor="start" font-weight="normal" font-family="DejaVu Sans, sans-serif">mooncake TransferEngine 仅 rdma/tcp,须经 ConnectX NIC(单机回环)且需 RoCEv2 GID,故单机 PD 不占 NVLink 优势。</text>
+</svg>

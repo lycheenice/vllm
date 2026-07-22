@@ -8,6 +8,27 @@
 
 ---
 
+## 0. h200-2 硬件拓扑(CPU / GPU / NIC / PCIe Switch)
+
+![h200-2 topology](./topology_h200-2.jpg)
+
+> 由 `make_topology.py` 生成(SVG→JPEG),数据源:h200-2 实测 `nvidia-smi topo -m` / `lspci` /
+> `numactl -H`(2026-07-22)。SVG 原图 `topology_h200-2.svg`。
+
+要点(与 mooncake/nixl 传输机制强相关):
+- **2×Xeon Platinum 8558**(各 48c),**2 个 NUMA**,每 NUMA ~1TB DDR5,跨 NUMA 经 **UPI**(topo 记 `SYS`)。
+- **8×H200 经 NVSwitch 全互联**,任意 GPU↔GPU 都是 **NV18**(18-link bonded NVLink,~900GB/s),与 NUMA 无关。
+- **每张 GPU 配一张 ConnectX-7**(mlx5_0-6/mlx5_9),GPU 与其 NIC **同一 PEX890xx Gen5 PCIe switch**(topo 记
+  `PIX`)→ GPUDirect RDMA 最短路径。GPU0-3+mlx5_0-3 在 **NUMA0**,GPU4-7+mlx5_4/5/6/9 在 **NUMA1**。
+- **mlx5_bond_0 = ConnectX-6 Dx 双口 bond**(即 bond1 `10.119.195.74`,前端/管理网,挂 NUMA1),**不是**每 GPU 的
+  GPUDirect RDMA 口。之前 mooncake 用 `get_ip()` 取到这个 bond IP 去做 RDMA,与 GPUDirect 的 CX-7 口不是一回事。
+- **对 PD 的意义**:P(GPU0-3)↔D(GPU4-7)的 KV 传输,nixl 经 UCX `cuda_ipc` 直接走 **NVLink(NV18)免网卡**;
+  mooncake TransferEngine 只有 rdma/tcp,须经 ConnectX NIC(单机回环)且要 RoCEv2 GID —— 见 §4。
+
+---
+
+---
+
 ## 1. 现状(基于实际代码调研)
 
 ### MooncakeConnector 是纯 GPU 直传
