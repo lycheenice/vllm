@@ -109,9 +109,38 @@ bind-mount 单文件覆盖进容器(免整包挂载)。
 3. `correct_check`:与 base1 greedy 输出一致(语义正确)。
 4. bench(统一口径),与 **test3(nixl+cpu)** 横向对比、与 **test2(mooncake+gpu)** 纵向对比。
 
-## 4. 前置阻塞(2026-07-22 实测)
-test2(mooncake GPU 直传)当前在 h200-2 **单机 P/D 下 mooncake TransferEngine 起不来**:
-RoCE 设备 GID 为 link-local(fe80/RoCEv1),mooncake 需 RoCEv2 GID → `open device ... GID -1,
-No available RNIC`。**test4 实验依赖 mooncake 传输链路可用,故与 test2 同被此 RoCE GID 配置阻塞**。
-代码可先开发完成;实验待 mooncake 传输在本 fabric 跑通(配置 RoCEv2 GID 或换可用 RNIC)后进行。
-注:test3 已证 KV 传输方式非 PD 瓶颈,test4/test2 预期结论与 test1 同量级。
+## 4. 前置阻塞与关键问答(2026-07-22)
+
+### Q1:单机 TP4+TP4 的 PD,为什么 mooncake 还要 RDMA?不能走 NVLink 吗?
+- **两个 connector 传输机制不同**:
+  - **NIXL(test1/test3)**用 UCX,我们设了 `UCX_TLS=cuda_ipc,cuda_copy,tcp`。同机 GPU↔GPU 时 UCX 选
+    **`cuda_ipc`= CUDA IPC 点对点(走 NVLink/PCIe P2P),不经网卡**。所以 nixl 单机 PD 天然用 NVLink,无需 RDMA。
+  - **Mooncake(test2/test4)**的 TransferEngine 在 vLLM v0.25.0 里只暴露 `rdma` / `tcp` 两种协议
+    (`mooncake_protocol`,默认 rdma),**没有 CUDA-IPC/NVLink 本地传输**。故即便单机 P/D,inter-instance
+    的 KV 传输也走**网卡(RDMA)或 TCP**,不会走 NVLink。
+- **关键区分**:NVLink 在这里只用于**实例内** TP4 的 NCCL all-reduce;**跨实例 P→D 的 KV 搬运**是另一条
+  连接器传输路径——nixl 能把它走 NVLink(cuda_ipc),mooncake 在此集成里不能。
+- **结论**:mooncake 现状下,单机 PD 仍需 RDMA(或可用的 TCP);它不会自动用 NVLink 做 PD 这一跳。这也说明
+  **mooncake 在结构上比 nixl 更不适合单机 PD**(nixl 白拿 NVLink)。(mooncake 某些版本或有 local/shm 传输,
+  但本连接器未选用,亦未跑通。)
+
+### Q2:h2↔h6 RDMA 实测没问题,是不是容器挂载参数的问题?有没有用 host network?
+- **用了 host network**:`serve_pd.sh` 的 `docker run` 一直带 `--network host --ipc=host`。
+- **容器参数确有过一处缺口且已补**:最初容器有 rdma 库但**没透传 `/dev/infiniband` 字符设备** →
+  mooncake `topology: No RDMA devices found`。已加 `--device=/dev/infiniband/* --cap-add=IPC_LOCK --ulimit memlock=-1`,
+  之后容器能看到 RDMA 设备。
+- **补齐后仍失败于 GID**:`Failed to open device mlx5_* … GID -1 / No available RNIC`。实测各 mlx5(含
+  mlx5_bond_0)**GID index 0 = link-local `fe80`(RoCEv1)**,mooncake 需 RoCEv2 GID。
+- **修正此前结论**:鉴于你实测 h2↔h6 RDMA 正常,**fabric 本身没问题**;更可能的原因是:
+  (a) **GID index 选择**——RoCEv2 GID 在更高 index(如 1/3),mooncake 默认取到 index 0 的 link-local;
+      可能需给 mooncake 指定 GID index / 正确的 `device_name:port`;
+  (b) **单机 RDMA 回环**——你的 RDMA 测试大概率是跨机(h2↔h6),而 test2 是 h2→h2(P/D 同机、都绑
+      `get_ip()=10.119.195.74`),同网卡 QP-to-self 回环行为可能与跨机不同;
+  (c) 仍可能有我没完全配对的容器/GID 细节。
+- **老实说**:我把"RDMA 设备可见"这步搞定了,但**没在交回机器前解决 RoCEv2-GID 选择**,故之前"fabric 需配
+  RoCEv2 GID"的说法**过强**。准确表述:容器已能看到 RDMA 设备,但 mooncake 只找到 link-local(RoCEv1)GID
+  就把所有 RNIC 禁用了;下一步应让 mooncake 用上 RoCEv2 GID(指定 GID index / 设备端口),并处理单机回环。
+
+### 对 test4 的影响
+test4 实验依赖 mooncake 传输可用,与 test2 同被上述 GID 问题阻塞。**代码已实现**(见 §落地约定 + 上方实现清单),
+待 mooncake 传输在单机跑通后 on-device 验证。注:test3 已证 KV 传输方式非 PD 瓶颈,test4/test2 预期结论与 test1 同量级。

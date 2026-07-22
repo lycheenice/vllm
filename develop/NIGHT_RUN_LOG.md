@@ -34,6 +34,14 @@
 - **test2 阻塞根因**:mooncake RDMA 需 RoCEv2 GID,h2 各 mlx5 只有 fe80 link-local GID(RoCEv1)→ 全设备被禁用 `No available RNIC`。属 fabric/GID 配置,非代码 bug。
 - **test4 代码**:按设计路线A实现(host pinned 镜像注册 + send前D2H + recv后H2D,复用 SupportsHMA 注入的 copy_blocks),py_compile 通过,待 on-device 验证(依赖 test2 传输通)。
 - git:develop 已提交推送 fork(lycheenice/vllm v0.25.0);本轮 mooncake 改动待再次提交。
+
+## 2026-07-22 交回 + 问答修正
+- **h200-2 已交回生产**:实验容器/进程全清,SGLang 生产已自行恢复满载。
+- **Q1(为何单机还要 RDMA)**:mooncake TransferEngine 只有 rdma/tcp,无 NVLink/cuda_ipc 本地传输;
+  nixl 用 UCX cuda_ipc 走 NVLink 才在单机免 RDMA。故 mooncake 单机 PD 仍走网卡,详见 test4/DESIGN.md §4。
+- **Q2(是否容器参数/host network)**:用了 `--network host`;缺 `/dev/infiniband` 透传已补;
+  剩余卡在 mooncake 只取到 link-local(RoCEv1)GID index0 → `No available RNIC`。鉴于 fabric 实测正常,
+  **修正**:非 fabric 问题,而是 RoCEv2 GID index 选择 / 单机回环,未在交回前解决。详见 DESIGN.md §4。
 | - | test4-mooncake-cpu-bypass | ❌ 跳过 | code/vllm 未开发 |
 
 ## ★核心对比报告 → results_report/PD_COMPARISON.md + pd_ramp.png(make_pd_report.py 生成)
